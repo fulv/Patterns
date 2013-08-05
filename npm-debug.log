@@ -1,0 +1,861 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/cornelis/Sites/Patterns/.node/bin/node',
+1 verbose cli   '/Users/cornelis/Sites/Patterns/.node/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'bungle',
+1 verbose cli   '--force' ]
+2 info using npm@1.2.11
+3 info using node@v0.8.20
+4 warn using --force I sure hope you know what you are doing.
+5 verbose read json /Users/cornelis/Sites/Patterns/package.json
+6 verbose read json /Users/cornelis/Sites/Patterns/node_modules/bungle/package.json
+7 verbose read json /Users/cornelis/Sites/Patterns/node_modules/commander/package.json
+8 verbose read json /Users/cornelis/Sites/Patterns/node_modules/express/package.json
+9 verbose read json /Users/cornelis/Sites/Patterns/node_modules/git-rev/package.json
+10 verbose read json /Users/cornelis/Sites/Patterns/node_modules/jshint/package.json
+11 verbose read json /Users/cornelis/Sites/Patterns/node_modules/pegjs/package.json
+12 verbose read json /Users/cornelis/Sites/Patterns/node_modules/phantom-jasmine/package.json
+13 verbose read json /Users/cornelis/Sites/Patterns/node_modules/phantomjs/package.json
+14 verbose read json /Users/cornelis/Sites/Patterns/node_modules/rimraf/package.json
+15 verbose from cache /Users/cornelis/Sites/Patterns/package.json
+16 verbose readDependencies using package.json deps
+17 verbose cache add [ 'bungle', null ]
+18 verbose cache add name=undefined spec="bungle" args=["bungle",null]
+19 verbose parsed url { pathname: 'bungle', path: 'bungle', href: 'bungle' }
+20 silly lockFile 3b22e1e3-bungle bungle
+21 verbose lock bungle /Users/cornelis/.npm/3b22e1e3-bungle.lock
+22 silly lockFile 3b22e1e3-bungle bungle
+23 silly lockFile 3b22e1e3-bungle bungle
+24 verbose addNamed [ 'bungle', '' ]
+25 verbose addNamed [ null, '' ]
+26 silly lockFile 43483a12-bungle bungle@
+27 verbose lock bungle@ /Users/cornelis/.npm/43483a12-bungle.lock
+28 silly addNameRange { name: 'bungle', range: '', hasData: false }
+29 verbose url raw bungle
+30 verbose url resolving [ 'https://registry.npmjs.org/', './bungle' ]
+31 verbose url resolved https://registry.npmjs.org/bungle
+32 info trying registry request attempt 1 at 12:39:04
+33 verbose etag "1204RQ2LXEU73FKFED3A3Q4NR"
+34 http GET https://registry.npmjs.org/bungle
+35 http 304 https://registry.npmjs.org/bungle
+36 silly registry.get cb [ 304,
+36 silly registry.get   { server: 'CouchDB/1.3.0 (Erlang OTP/R15B03)',
+36 silly registry.get     etag: '"1204RQ2LXEU73FKFED3A3Q4NR"',
+36 silly registry.get     date: 'Mon, 05 Aug 2013 10:39:18 GMT',
+36 silly registry.get     'content-length': '0' } ]
+37 verbose etag bungle from cache
+38 silly addNameRange number 2 { name: 'bungle', range: '', hasData: true }
+39 silly addNameRange versions [ 'bungle', [ '0.0.0', '0.0.1', '0.0.2' ] ]
+40 verbose addNamed [ 'bungle', '0.0.2' ]
+41 verbose addNamed [ '0.0.2', '0.0.2' ]
+42 silly lockFile 88564bc3-bungle-0-0-2 bungle@0.0.2
+43 verbose lock bungle@0.0.2 /Users/cornelis/.npm/88564bc3-bungle-0-0-2.lock
+44 silly lockFile c20fcae4-pmjs-org-bungle-bungle-0-0-2-tgz https://registry.npmjs.org/bungle/-/bungle-0.0.2.tgz
+45 verbose lock https://registry.npmjs.org/bungle/-/bungle-0.0.2.tgz /Users/cornelis/.npm/c20fcae4-pmjs-org-bungle-bungle-0-0-2-tgz.lock
+46 verbose addRemoteTarball [ 'https://registry.npmjs.org/bungle/-/bungle-0.0.2.tgz',
+46 verbose addRemoteTarball   '60a71339905df79d497a717a35840bdea8454c92' ]
+47 info retry fetch attempt 1 at 12:39:17
+48 verbose fetch to= /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/tmp.tgz
+49 http GET https://registry.npmjs.org/bungle/-/bungle-0.0.2.tgz
+50 http 200 https://registry.npmjs.org/bungle/-/bungle-0.0.2.tgz
+51 silly shasum updated bytes 7252
+52 info shasum 60a71339905df79d497a717a35840bdea8454c92
+52 info shasum /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/tmp.tgz
+53 verbose tar unpack /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/tmp.tgz
+54 silly lockFile d961a7f8-57325-0-2583983922377229-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/package
+55 verbose lock /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/package /Users/cornelis/.npm/d961a7f8-57325-0-2583983922377229-package.lock
+56 silly lockFile 9ac16cd0-57325-0-2583983922377229-tmp-tgz /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/tmp.tgz
+57 verbose lock /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/tmp.tgz /Users/cornelis/.npm/9ac16cd0-57325-0-2583983922377229-tmp-tgz.lock
+58 silly gunzTarPerm modes [ '755', '644' ]
+59 silly gunzTarPerm extractEntry package.json
+60 silly gunzTarPerm extractEntry .npmignore
+61 silly gunzTarPerm extractEntry README.md
+62 silly gunzTarPerm extractEntry index.js
+63 silly gunzTarPerm extractEntry .jshintrc
+64 silly gunzTarPerm extractEntry bin/bungle
+65 silly gunzTarPerm extractEntry lib/actions.js
+66 silly gunzTarPerm extractEntry lib/deprepo.js
+67 silly gunzTarPerm extractEntry lib/download.js
+68 silly gunzTarPerm extractEntry lib/specrepo.js
+69 silly gunzTarPerm extractEntry lib/utils.js
+70 verbose read json /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/package/package.json
+71 silly lockFile d961a7f8-57325-0-2583983922377229-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/package
+72 silly lockFile d961a7f8-57325-0-2583983922377229-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/package
+73 silly lockFile 9ac16cd0-57325-0-2583983922377229-tmp-tgz /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/tmp.tgz
+74 silly lockFile 9ac16cd0-57325-0-2583983922377229-tmp-tgz /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/tmp.tgz
+75 verbose from cache /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/package/package.json
+76 verbose tar pack [ '/Users/cornelis/.npm/bungle/0.0.2/package.tgz',
+76 verbose tar pack   '/var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/package' ]
+77 verbose tarball /Users/cornelis/.npm/bungle/0.0.2/package.tgz
+78 verbose folder /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/package
+79 silly lockFile d961a7f8-57325-0-2583983922377229-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/package
+80 verbose lock /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/package /Users/cornelis/.npm/d961a7f8-57325-0-2583983922377229-package.lock
+81 silly lockFile 9ad0083b-lis-npm-bungle-0-0-2-package-tgz /Users/cornelis/.npm/bungle/0.0.2/package.tgz
+82 verbose lock /Users/cornelis/.npm/bungle/0.0.2/package.tgz /Users/cornelis/.npm/9ad0083b-lis-npm-bungle-0-0-2-package-tgz.lock
+83 silly lockFile d961a7f8-57325-0-2583983922377229-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/package
+84 silly lockFile d961a7f8-57325-0-2583983922377229-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699157325-0.2583983922377229/package
+85 silly lockFile 9ad0083b-lis-npm-bungle-0-0-2-package-tgz /Users/cornelis/.npm/bungle/0.0.2/package.tgz
+86 silly lockFile 9ad0083b-lis-npm-bungle-0-0-2-package-tgz /Users/cornelis/.npm/bungle/0.0.2/package.tgz
+87 silly lockFile 589c1254-ornelis-npm-bungle-0-0-2-package /Users/cornelis/.npm/bungle/0.0.2/package
+88 verbose lock /Users/cornelis/.npm/bungle/0.0.2/package /Users/cornelis/.npm/589c1254-ornelis-npm-bungle-0-0-2-package.lock
+89 silly lockFile 589c1254-ornelis-npm-bungle-0-0-2-package /Users/cornelis/.npm/bungle/0.0.2/package
+90 silly lockFile 589c1254-ornelis-npm-bungle-0-0-2-package /Users/cornelis/.npm/bungle/0.0.2/package
+91 verbose tar unpack /Users/cornelis/.npm/bungle/0.0.2/package.tgz
+92 silly lockFile 589c1254-ornelis-npm-bungle-0-0-2-package /Users/cornelis/.npm/bungle/0.0.2/package
+93 verbose lock /Users/cornelis/.npm/bungle/0.0.2/package /Users/cornelis/.npm/589c1254-ornelis-npm-bungle-0-0-2-package.lock
+94 silly lockFile 9ad0083b-lis-npm-bungle-0-0-2-package-tgz /Users/cornelis/.npm/bungle/0.0.2/package.tgz
+95 verbose lock /Users/cornelis/.npm/bungle/0.0.2/package.tgz /Users/cornelis/.npm/9ad0083b-lis-npm-bungle-0-0-2-package-tgz.lock
+96 silly gunzTarPerm modes [ '755', '644' ]
+97 silly gunzTarPerm extractEntry package.json
+98 silly gunzTarPerm extractEntry .npmignore
+99 silly gunzTarPerm extractEntry README.md
+100 silly gunzTarPerm extractEntry index.js
+101 silly gunzTarPerm extractEntry .jshintrc
+102 silly gunzTarPerm extractEntry bin/bungle
+103 silly gunzTarPerm extractEntry lib/actions.js
+104 silly gunzTarPerm extractEntry lib/deprepo.js
+105 silly gunzTarPerm extractEntry lib/download.js
+106 silly gunzTarPerm extractEntry lib/specrepo.js
+107 silly gunzTarPerm extractEntry lib/utils.js
+108 verbose read json /Users/cornelis/.npm/bungle/0.0.2/package/package.json
+109 silly lockFile 589c1254-ornelis-npm-bungle-0-0-2-package /Users/cornelis/.npm/bungle/0.0.2/package
+110 silly lockFile 589c1254-ornelis-npm-bungle-0-0-2-package /Users/cornelis/.npm/bungle/0.0.2/package
+111 silly lockFile 9ad0083b-lis-npm-bungle-0-0-2-package-tgz /Users/cornelis/.npm/bungle/0.0.2/package.tgz
+112 silly lockFile 9ad0083b-lis-npm-bungle-0-0-2-package-tgz /Users/cornelis/.npm/bungle/0.0.2/package.tgz
+113 silly shasum updated bytes 7258
+114 info shasum f017a626496fd848312c058d41cab999693f6d8a
+114 info shasum /Users/cornelis/.npm/bungle/0.0.2/package.tgz
+115 verbose from cache /Users/cornelis/.npm/bungle/0.0.2/package/package.json
+116 verbose chmod /Users/cornelis/.npm/bungle/0.0.2/package.tgz 644
+117 verbose chown /Users/cornelis/.npm/bungle/0.0.2/package.tgz [ 501, 20 ]
+118 silly lockFile c20fcae4-pmjs-org-bungle-bungle-0-0-2-tgz https://registry.npmjs.org/bungle/-/bungle-0.0.2.tgz
+119 silly lockFile c20fcae4-pmjs-org-bungle-bungle-0-0-2-tgz https://registry.npmjs.org/bungle/-/bungle-0.0.2.tgz
+120 silly lockFile 88564bc3-bungle-0-0-2 bungle@0.0.2
+121 silly lockFile 88564bc3-bungle-0-0-2 bungle@0.0.2
+122 silly lockFile 43483a12-bungle bungle@
+123 silly lockFile 43483a12-bungle bungle@
+124 silly resolved [ { name: 'bungle',
+124 silly resolved     version: '0.0.2',
+124 silly resolved     description: 'Bungle is a package manager for javascript browser applications.',
+124 silly resolved     maintainers: [ [Object] ],
+124 silly resolved     dependencies:
+124 silly resolved      { almond: '>=0.2.4',
+124 silly resolved        async: '>=0.2.5',
+124 silly resolved        commander: '>=1.1.1',
+124 silly resolved        request: '>=2.12.0',
+124 silly resolved        requirejs: '>=2.1.2',
+124 silly resolved        rimraf: '>=2.1.4',
+124 silly resolved        tar: '>=0.1.16',
+124 silly resolved        'adm-zip': '>=0.4.3',
+124 silly resolved        unzip: '>=0.1.8' },
+124 silly resolved     repository: { type: 'git', url: 'http://github.com/bunglejs/bungle.git' },
+124 silly resolved     bugs: { url: 'http://github.com/bunglejs/bungle/issues' },
+124 silly resolved     bin: { bungle: './bin/bungle' },
+124 silly resolved     readmeFilename: 'README.md',
+124 silly resolved     main: 'index.js',
+124 silly resolved     devDependencies: {},
+124 silly resolved     scripts: { test: 'exit 0' },
+124 silly resolved     author: { name: 'Marko Durkovic' },
+124 silly resolved     license: 'MIT',
+124 silly resolved     readme: 'bungle\n======',
+124 silly resolved     _id: 'bungle@0.0.2',
+124 silly resolved     dist: { shasum: 'f017a626496fd848312c058d41cab999693f6d8a' },
+124 silly resolved     _from: 'bungle@',
+124 silly resolved     _resolved: 'https://registry.npmjs.org/bungle/-/bungle-0.0.2.tgz' } ]
+125 info install bungle@0.0.2 into /Users/cornelis/Sites/Patterns
+126 info installOne bungle@0.0.2
+127 verbose from cache /Users/cornelis/.npm/bungle/0.0.2/package/package.json
+128 info /Users/cornelis/Sites/Patterns/node_modules/bungle unbuild
+129 verbose from cache /Users/cornelis/Sites/Patterns/node_modules/bungle/package.json
+130 info preuninstall bungle@0.0.2
+131 info uninstall bungle@0.0.2
+132 verbose true,/Users/cornelis/Sites/Patterns/node_modules,/Users/cornelis/Sites/Patterns/node_modules unbuild bungle@0.0.2
+133 verbose /Users/cornelis/Sites/Patterns/node_modules/.bin,[object Object] binRoot
+134 info postuninstall bungle@0.0.2
+135 verbose tar unpack /Users/cornelis/.npm/bungle/0.0.2/package.tgz
+136 silly lockFile 293c1285-tes-Patterns-node-modules-bungle /Users/cornelis/Sites/Patterns/node_modules/bungle
+137 verbose lock /Users/cornelis/Sites/Patterns/node_modules/bungle /Users/cornelis/.npm/293c1285-tes-Patterns-node-modules-bungle.lock
+138 silly lockFile 9ad0083b-lis-npm-bungle-0-0-2-package-tgz /Users/cornelis/.npm/bungle/0.0.2/package.tgz
+139 verbose lock /Users/cornelis/.npm/bungle/0.0.2/package.tgz /Users/cornelis/.npm/9ad0083b-lis-npm-bungle-0-0-2-package-tgz.lock
+140 silly gunzTarPerm modes [ '755', '644' ]
+141 silly gunzTarPerm extractEntry package.json
+142 silly gunzTarPerm extractEntry .npmignore
+143 silly gunzTarPerm extractEntry README.md
+144 silly gunzTarPerm extractEntry index.js
+145 silly gunzTarPerm extractEntry .jshintrc
+146 silly gunzTarPerm extractEntry bin/bungle
+147 silly gunzTarPerm extractEntry lib/actions.js
+148 silly gunzTarPerm extractEntry lib/deprepo.js
+149 silly gunzTarPerm extractEntry lib/download.js
+150 silly gunzTarPerm extractEntry lib/specrepo.js
+151 silly gunzTarPerm extractEntry lib/utils.js
+152 verbose read json /Users/cornelis/Sites/Patterns/node_modules/bungle/package.json
+153 silly lockFile 293c1285-tes-Patterns-node-modules-bungle /Users/cornelis/Sites/Patterns/node_modules/bungle
+154 silly lockFile 293c1285-tes-Patterns-node-modules-bungle /Users/cornelis/Sites/Patterns/node_modules/bungle
+155 silly lockFile 9ad0083b-lis-npm-bungle-0-0-2-package-tgz /Users/cornelis/.npm/bungle/0.0.2/package.tgz
+156 silly lockFile 9ad0083b-lis-npm-bungle-0-0-2-package-tgz /Users/cornelis/.npm/bungle/0.0.2/package.tgz
+157 info preinstall bungle@0.0.2
+158 verbose from cache /Users/cornelis/Sites/Patterns/node_modules/bungle/package.json
+159 verbose readDependencies using package.json deps
+160 verbose from cache /Users/cornelis/Sites/Patterns/node_modules/bungle/package.json
+161 verbose readDependencies using package.json deps
+162 verbose cache add [ 'almond@>=0.2.4', null ]
+163 verbose cache add name=undefined spec="almond@>=0.2.4" args=["almond@>=0.2.4",null]
+164 verbose parsed url { pathname: 'almond@%3E=0.2.4',
+164 verbose parsed url   path: 'almond@%3E=0.2.4',
+164 verbose parsed url   href: 'almond@%3E=0.2.4' }
+165 verbose cache add name="almond" spec=">=0.2.4" args=["almond",">=0.2.4"]
+166 verbose parsed url { pathname: '%3E=0.2.4', path: '%3E=0.2.4', href: '%3E=0.2.4' }
+167 verbose addNamed [ 'almond', '>=0.2.4' ]
+168 verbose addNamed [ null, '>=0.2.4' ]
+169 silly lockFile fffa9444-almond-0-2-4 almond@>=0.2.4
+170 verbose lock almond@>=0.2.4 /Users/cornelis/.npm/fffa9444-almond-0-2-4.lock
+171 verbose cache add [ 'async@>=0.2.5', null ]
+172 verbose cache add name=undefined spec="async@>=0.2.5" args=["async@>=0.2.5",null]
+173 verbose parsed url { pathname: 'async@%3E=0.2.5',
+173 verbose parsed url   path: 'async@%3E=0.2.5',
+173 verbose parsed url   href: 'async@%3E=0.2.5' }
+174 verbose cache add name="async" spec=">=0.2.5" args=["async",">=0.2.5"]
+175 verbose parsed url { pathname: '%3E=0.2.5', path: '%3E=0.2.5', href: '%3E=0.2.5' }
+176 verbose addNamed [ 'async', '>=0.2.5' ]
+177 verbose addNamed [ null, '>=0.2.5' ]
+178 silly lockFile 95b1455b-async-0-2-5 async@>=0.2.5
+179 verbose lock async@>=0.2.5 /Users/cornelis/.npm/95b1455b-async-0-2-5.lock
+180 verbose cache add [ 'commander@>=1.1.1', null ]
+181 verbose cache add name=undefined spec="commander@>=1.1.1" args=["commander@>=1.1.1",null]
+182 verbose parsed url { pathname: 'commander@%3E=1.1.1',
+182 verbose parsed url   path: 'commander@%3E=1.1.1',
+182 verbose parsed url   href: 'commander@%3E=1.1.1' }
+183 verbose cache add name="commander" spec=">=1.1.1" args=["commander",">=1.1.1"]
+184 verbose parsed url { pathname: '%3E=1.1.1', path: '%3E=1.1.1', href: '%3E=1.1.1' }
+185 verbose addNamed [ 'commander', '>=1.1.1' ]
+186 verbose addNamed [ null, '>=1.1.1' ]
+187 silly lockFile 480db181-commander-1-1-1 commander@>=1.1.1
+188 verbose lock commander@>=1.1.1 /Users/cornelis/.npm/480db181-commander-1-1-1.lock
+189 verbose cache add [ 'request@>=2.12.0', null ]
+190 verbose cache add name=undefined spec="request@>=2.12.0" args=["request@>=2.12.0",null]
+191 verbose parsed url { pathname: 'request@%3E=2.12.0',
+191 verbose parsed url   path: 'request@%3E=2.12.0',
+191 verbose parsed url   href: 'request@%3E=2.12.0' }
+192 verbose cache add name="request" spec=">=2.12.0" args=["request",">=2.12.0"]
+193 verbose parsed url { pathname: '%3E=2.12.0',
+193 verbose parsed url   path: '%3E=2.12.0',
+193 verbose parsed url   href: '%3E=2.12.0' }
+194 verbose addNamed [ 'request', '>=2.12.0' ]
+195 verbose addNamed [ null, '>=2.12.0' ]
+196 silly lockFile 60450e87-request-2-12-0 request@>=2.12.0
+197 verbose lock request@>=2.12.0 /Users/cornelis/.npm/60450e87-request-2-12-0.lock
+198 silly addNameRange { name: 'almond', range: '>=0.2.4', hasData: false }
+199 silly addNameRange { name: 'async', range: '>=0.2.5', hasData: false }
+200 silly addNameRange { name: 'commander', range: '>=1.1.1', hasData: false }
+201 silly addNameRange { name: 'request', range: '>=2.12.0', hasData: false }
+202 verbose cache add [ 'requirejs@>=2.1.2', null ]
+203 verbose cache add name=undefined spec="requirejs@>=2.1.2" args=["requirejs@>=2.1.2",null]
+204 verbose parsed url { pathname: 'requirejs@%3E=2.1.2',
+204 verbose parsed url   path: 'requirejs@%3E=2.1.2',
+204 verbose parsed url   href: 'requirejs@%3E=2.1.2' }
+205 verbose cache add name="requirejs" spec=">=2.1.2" args=["requirejs",">=2.1.2"]
+206 verbose parsed url { pathname: '%3E=2.1.2', path: '%3E=2.1.2', href: '%3E=2.1.2' }
+207 verbose addNamed [ 'requirejs', '>=2.1.2' ]
+208 verbose addNamed [ null, '>=2.1.2' ]
+209 silly lockFile 06938e42-requirejs-2-1-2 requirejs@>=2.1.2
+210 verbose lock requirejs@>=2.1.2 /Users/cornelis/.npm/06938e42-requirejs-2-1-2.lock
+211 verbose cache add [ 'rimraf@>=2.1.4', null ]
+212 verbose cache add name=undefined spec="rimraf@>=2.1.4" args=["rimraf@>=2.1.4",null]
+213 verbose parsed url { pathname: 'rimraf@%3E=2.1.4',
+213 verbose parsed url   path: 'rimraf@%3E=2.1.4',
+213 verbose parsed url   href: 'rimraf@%3E=2.1.4' }
+214 verbose cache add name="rimraf" spec=">=2.1.4" args=["rimraf",">=2.1.4"]
+215 verbose parsed url { pathname: '%3E=2.1.4', path: '%3E=2.1.4', href: '%3E=2.1.4' }
+216 verbose addNamed [ 'rimraf', '>=2.1.4' ]
+217 verbose addNamed [ null, '>=2.1.4' ]
+218 silly lockFile 82d2ef5a-rimraf-2-1-4 rimraf@>=2.1.4
+219 verbose lock rimraf@>=2.1.4 /Users/cornelis/.npm/82d2ef5a-rimraf-2-1-4.lock
+220 verbose cache add [ 'tar@>=0.1.16', null ]
+221 verbose cache add name=undefined spec="tar@>=0.1.16" args=["tar@>=0.1.16",null]
+222 verbose parsed url { pathname: 'tar@%3E=0.1.16',
+222 verbose parsed url   path: 'tar@%3E=0.1.16',
+222 verbose parsed url   href: 'tar@%3E=0.1.16' }
+223 verbose cache add name="tar" spec=">=0.1.16" args=["tar",">=0.1.16"]
+224 verbose parsed url { pathname: '%3E=0.1.16',
+224 verbose parsed url   path: '%3E=0.1.16',
+224 verbose parsed url   href: '%3E=0.1.16' }
+225 verbose addNamed [ 'tar', '>=0.1.16' ]
+226 verbose addNamed [ null, '>=0.1.16' ]
+227 silly lockFile abacbe7d-tar-0-1-16 tar@>=0.1.16
+228 verbose lock tar@>=0.1.16 /Users/cornelis/.npm/abacbe7d-tar-0-1-16.lock
+229 verbose url raw almond
+230 verbose url resolving [ 'https://registry.npmjs.org/', './almond' ]
+231 verbose url resolved https://registry.npmjs.org/almond
+232 info trying registry request attempt 1 at 12:39:28
+233 verbose etag "5PSH9KEDO2K48JP7WT5V1NKDS"
+234 http GET https://registry.npmjs.org/almond
+235 silly addNameRange { name: 'rimraf', range: '>=2.1.4', hasData: false }
+236 silly addNameRange { name: 'tar', range: '>=0.1.16', hasData: false }
+237 verbose url raw async
+238 verbose url resolving [ 'https://registry.npmjs.org/', './async' ]
+239 verbose url resolved https://registry.npmjs.org/async
+240 info trying registry request attempt 1 at 12:39:28
+241 verbose etag "6VT36D6J9446HV97TL1KWBHI1"
+242 http GET https://registry.npmjs.org/async
+243 verbose url raw commander
+244 verbose url resolving [ 'https://registry.npmjs.org/', './commander' ]
+245 verbose url resolved https://registry.npmjs.org/commander
+246 info trying registry request attempt 1 at 12:39:28
+247 verbose etag "7QZEFP6Z1RL5BTHV9LG3HR7TK"
+248 http GET https://registry.npmjs.org/commander
+249 verbose url raw request
+250 verbose url resolving [ 'https://registry.npmjs.org/', './request' ]
+251 verbose url resolved https://registry.npmjs.org/request
+252 info trying registry request attempt 1 at 12:39:28
+253 verbose etag "EAONGIF4OSBAKDTQ3KSR768RP"
+254 http GET https://registry.npmjs.org/request
+255 verbose cache add [ 'adm-zip@>=0.4.3', null ]
+256 verbose cache add name=undefined spec="adm-zip@>=0.4.3" args=["adm-zip@>=0.4.3",null]
+257 verbose parsed url { pathname: 'adm-zip@%3E=0.4.3',
+257 verbose parsed url   path: 'adm-zip@%3E=0.4.3',
+257 verbose parsed url   href: 'adm-zip@%3E=0.4.3' }
+258 verbose cache add name="adm-zip" spec=">=0.4.3" args=["adm-zip",">=0.4.3"]
+259 verbose parsed url { pathname: '%3E=0.4.3', path: '%3E=0.4.3', href: '%3E=0.4.3' }
+260 verbose addNamed [ 'adm-zip', '>=0.4.3' ]
+261 verbose addNamed [ null, '>=0.4.3' ]
+262 silly lockFile 85aebe73-adm-zip-0-4-3 adm-zip@>=0.4.3
+263 verbose lock adm-zip@>=0.4.3 /Users/cornelis/.npm/85aebe73-adm-zip-0-4-3.lock
+264 verbose cache add [ 'unzip@>=0.1.8', null ]
+265 verbose cache add name=undefined spec="unzip@>=0.1.8" args=["unzip@>=0.1.8",null]
+266 verbose parsed url { pathname: 'unzip@%3E=0.1.8',
+266 verbose parsed url   path: 'unzip@%3E=0.1.8',
+266 verbose parsed url   href: 'unzip@%3E=0.1.8' }
+267 verbose cache add name="unzip" spec=">=0.1.8" args=["unzip",">=0.1.8"]
+268 verbose parsed url { pathname: '%3E=0.1.8', path: '%3E=0.1.8', href: '%3E=0.1.8' }
+269 verbose addNamed [ 'unzip', '>=0.1.8' ]
+270 verbose addNamed [ null, '>=0.1.8' ]
+271 silly lockFile 52860824-unzip-0-1-8 unzip@>=0.1.8
+272 verbose lock unzip@>=0.1.8 /Users/cornelis/.npm/52860824-unzip-0-1-8.lock
+273 silly addNameRange { name: 'requirejs', range: '>=2.1.2', hasData: false }
+274 silly addNameRange { name: 'adm-zip', range: '>=0.4.3', hasData: false }
+275 silly addNameRange { name: 'unzip', range: '>=0.1.8', hasData: false }
+276 verbose url raw rimraf
+277 verbose url resolving [ 'https://registry.npmjs.org/', './rimraf' ]
+278 verbose url resolved https://registry.npmjs.org/rimraf
+279 info trying registry request attempt 1 at 12:39:28
+280 verbose etag "50X3LWQDSY1SAULXQ7QRKW4PE"
+281 http GET https://registry.npmjs.org/rimraf
+282 verbose url raw tar
+283 verbose url resolving [ 'https://registry.npmjs.org/', './tar' ]
+284 verbose url resolved https://registry.npmjs.org/tar
+285 info trying registry request attempt 1 at 12:39:28
+286 verbose etag "COY2XZDBERUPVA4VTZR9ISQSZ"
+287 http GET https://registry.npmjs.org/tar
+288 verbose url raw requirejs
+289 verbose url resolving [ 'https://registry.npmjs.org/', './requirejs' ]
+290 verbose url resolved https://registry.npmjs.org/requirejs
+291 info trying registry request attempt 1 at 12:39:28
+292 verbose etag "BAZWL2P1HMKFD0IXXH02YV688"
+293 http GET https://registry.npmjs.org/requirejs
+294 verbose url raw adm-zip
+295 verbose url resolving [ 'https://registry.npmjs.org/', './adm-zip' ]
+296 verbose url resolved https://registry.npmjs.org/adm-zip
+297 info trying registry request attempt 1 at 12:39:28
+298 verbose etag "DEWMC58B79MYHNRIX3C4LEL47"
+299 http GET https://registry.npmjs.org/adm-zip
+300 verbose url raw unzip
+301 verbose url resolving [ 'https://registry.npmjs.org/', './unzip' ]
+302 verbose url resolved https://registry.npmjs.org/unzip
+303 info trying registry request attempt 1 at 12:39:28
+304 verbose etag "7AUN84UOFYLWCKP7ZGWE0L78G"
+305 http GET https://registry.npmjs.org/unzip
+306 info retry will retry, error on last attempt: Error: socket hang up
+307 info retry will retry, error on last attempt: Error: socket hang up
+308 info retry will retry, error on last attempt: Error: socket hang up
+309 info retry will retry, error on last attempt: Error: socket hang up
+310 info retry will retry, error on last attempt: Error: socket hang up
+311 http 304 https://registry.npmjs.org/requirejs
+312 silly registry.get cb [ 304,
+312 silly registry.get   { server: 'CouchDB/1.3.0 (Erlang OTP/R15B03)',
+312 silly registry.get     etag: '"BAZWL2P1HMKFD0IXXH02YV688"',
+312 silly registry.get     date: 'Mon, 05 Aug 2013 10:39:53 GMT',
+312 silly registry.get     'content-length': '0' } ]
+313 verbose etag requirejs from cache
+314 silly addNameRange number 2 { name: 'requirejs', range: '>=2.1.2', hasData: true }
+315 silly addNameRange versions [ 'requirejs',
+315 silly addNameRange   [ '0.26.0',
+315 silly addNameRange     '0.27.0',
+315 silly addNameRange     '0.27.1',
+315 silly addNameRange     '1.0.0',
+315 silly addNameRange     '1.0.1',
+315 silly addNameRange     '1.0.2',
+315 silly addNameRange     '1.0.3',
+315 silly addNameRange     '1.0.4',
+315 silly addNameRange     '1.0.5',
+315 silly addNameRange     '1.0.6',
+315 silly addNameRange     '1.0.7',
+315 silly addNameRange     '1.0.8',
+315 silly addNameRange     '2.0.0',
+315 silly addNameRange     '2.0.1',
+315 silly addNameRange     '2.0.2',
+315 silly addNameRange     '2.0.3',
+315 silly addNameRange     '2.0.4',
+315 silly addNameRange     '2.0.5',
+315 silly addNameRange     '2.0.6',
+315 silly addNameRange     '2.1.0',
+315 silly addNameRange     '2.1.1',
+315 silly addNameRange     '2.1.2',
+315 silly addNameRange     '2.1.3',
+315 silly addNameRange     '2.1.4',
+315 silly addNameRange     '2.1.5',
+315 silly addNameRange     '2.1.6',
+315 silly addNameRange     '2.1.7',
+315 silly addNameRange     '2.1.8' ] ]
+316 verbose addNamed [ 'requirejs', '2.1.8' ]
+317 verbose addNamed [ '2.1.8', '2.1.8' ]
+318 silly lockFile f58478c4-requirejs-2-1-8 requirejs@2.1.8
+319 verbose lock requirejs@2.1.8 /Users/cornelis/.npm/f58478c4-requirejs-2-1-8.lock
+320 silly lockFile 88e4e3be-rg-requirejs-requirejs-2-1-8-tgz https://registry.npmjs.org/requirejs/-/requirejs-2.1.8.tgz
+321 verbose lock https://registry.npmjs.org/requirejs/-/requirejs-2.1.8.tgz /Users/cornelis/.npm/88e4e3be-rg-requirejs-requirejs-2-1-8-tgz.lock
+322 verbose addRemoteTarball [ 'https://registry.npmjs.org/requirejs/-/requirejs-2.1.8.tgz',
+322 verbose addRemoteTarball   'f0dfa656d60d404947da796f9c661d92c1b0257a' ]
+323 info retry fetch attempt 1 at 12:39:52
+324 verbose fetch to= /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/tmp.tgz
+325 http GET https://registry.npmjs.org/requirejs/-/requirejs-2.1.8.tgz
+326 http 304 https://registry.npmjs.org/adm-zip
+327 silly registry.get cb [ 304,
+327 silly registry.get   { server: 'CouchDB/1.3.0 (Erlang OTP/R15B03)',
+327 silly registry.get     etag: '"DEWMC58B79MYHNRIX3C4LEL47"',
+327 silly registry.get     date: 'Mon, 05 Aug 2013 10:39:55 GMT',
+327 silly registry.get     'content-length': '0' } ]
+328 verbose etag adm-zip from cache
+329 silly addNameRange number 2 { name: 'adm-zip', range: '>=0.4.3', hasData: true }
+330 silly addNameRange versions [ 'adm-zip',
+330 silly addNameRange   [ '0.1.1',
+330 silly addNameRange     '0.1.2',
+330 silly addNameRange     '0.1.3',
+330 silly addNameRange     '0.1.4',
+330 silly addNameRange     '0.1.5',
+330 silly addNameRange     '0.1.6',
+330 silly addNameRange     '0.1.7',
+330 silly addNameRange     '0.1.8',
+330 silly addNameRange     '0.1.9',
+330 silly addNameRange     '0.2.0',
+330 silly addNameRange     '0.2.1',
+330 silly addNameRange     '0.4.3' ] ]
+331 verbose addNamed [ 'adm-zip', '0.4.3' ]
+332 verbose addNamed [ '0.4.3', '0.4.3' ]
+333 silly lockFile db902cdf-adm-zip-0-4-3 adm-zip@0.4.3
+334 verbose lock adm-zip@0.4.3 /Users/cornelis/.npm/db902cdf-adm-zip-0-4-3.lock
+335 silly lockFile 918c9c0c-js-org-adm-zip-adm-zip-0-4-3-tgz https://registry.npmjs.org/adm-zip/-/adm-zip-0.4.3.tgz
+336 verbose lock https://registry.npmjs.org/adm-zip/-/adm-zip-0.4.3.tgz /Users/cornelis/.npm/918c9c0c-js-org-adm-zip-adm-zip-0-4-3-tgz.lock
+337 verbose addRemoteTarball [ 'https://registry.npmjs.org/adm-zip/-/adm-zip-0.4.3.tgz',
+337 verbose addRemoteTarball   '28d6a3809abb7845a0ffa38f9fff455c2c6f6f6c' ]
+338 info retry fetch attempt 1 at 12:39:54
+339 verbose fetch to= /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/tmp.tgz
+340 http GET https://registry.npmjs.org/adm-zip/-/adm-zip-0.4.3.tgz
+341 http 304 https://registry.npmjs.org/unzip
+342 silly registry.get cb [ 304,
+342 silly registry.get   { server: 'CouchDB/1.3.0 (Erlang OTP/R15B03)',
+342 silly registry.get     etag: '"7AUN84UOFYLWCKP7ZGWE0L78G"',
+342 silly registry.get     date: 'Mon, 05 Aug 2013 10:39:56 GMT',
+342 silly registry.get     'content-length': '0' } ]
+343 verbose etag unzip from cache
+344 silly addNameRange number 2 { name: 'unzip', range: '>=0.1.8', hasData: true }
+345 silly addNameRange versions [ 'unzip',
+345 silly addNameRange   [ '0.0.1',
+345 silly addNameRange     '0.0.2',
+345 silly addNameRange     '0.0.3',
+345 silly addNameRange     '0.0.4',
+345 silly addNameRange     '0.1.0',
+345 silly addNameRange     '0.1.1',
+345 silly addNameRange     '0.1.2',
+345 silly addNameRange     '0.1.3',
+345 silly addNameRange     '0.1.4',
+345 silly addNameRange     '0.1.5',
+345 silly addNameRange     '0.1.6-alpha',
+345 silly addNameRange     '0.1.6',
+345 silly addNameRange     '0.1.7',
+345 silly addNameRange     '0.1.8' ] ]
+346 verbose addNamed [ 'unzip', '0.1.8' ]
+347 verbose addNamed [ '0.1.8', '0.1.8' ]
+348 silly lockFile 8581558e-unzip-0-1-8 unzip@0.1.8
+349 verbose lock unzip@0.1.8 /Users/cornelis/.npm/8581558e-unzip-0-1-8.lock
+350 silly lockFile 8d03336f--npmjs-org-unzip-unzip-0-1-8-tgz https://registry.npmjs.org/unzip/-/unzip-0.1.8.tgz
+351 verbose lock https://registry.npmjs.org/unzip/-/unzip-0.1.8.tgz /Users/cornelis/.npm/8d03336f--npmjs-org-unzip-unzip-0-1-8-tgz.lock
+352 verbose addRemoteTarball [ 'https://registry.npmjs.org/unzip/-/unzip-0.1.8.tgz',
+352 verbose addRemoteTarball   'b6ca171798242150b06fca320544592231aeb158' ]
+353 info retry fetch attempt 1 at 12:39:55
+354 verbose fetch to= /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/tmp.tgz
+355 http GET https://registry.npmjs.org/unzip/-/unzip-0.1.8.tgz
+356 info trying registry request attempt 2 at 12:39:57
+357 verbose etag "50X3LWQDSY1SAULXQ7QRKW4PE"
+358 http GET https://registry.npmjs.org/rimraf
+359 info trying registry request attempt 2 at 12:39:57
+360 verbose etag "7QZEFP6Z1RL5BTHV9LG3HR7TK"
+361 http GET https://registry.npmjs.org/commander
+362 info trying registry request attempt 2 at 12:39:57
+363 verbose etag "EAONGIF4OSBAKDTQ3KSR768RP"
+364 http GET https://registry.npmjs.org/request
+365 info trying registry request attempt 2 at 12:39:57
+366 verbose etag "5PSH9KEDO2K48JP7WT5V1NKDS"
+367 http GET https://registry.npmjs.org/almond
+368 info trying registry request attempt 2 at 12:39:57
+369 verbose etag "6VT36D6J9446HV97TL1KWBHI1"
+370 http GET https://registry.npmjs.org/async
+371 http 200 https://registry.npmjs.org/adm-zip/-/adm-zip-0.4.3.tgz
+372 silly shasum updated bytes 37021
+373 info shasum 28d6a3809abb7845a0ffa38f9fff455c2c6f6f6c
+373 info shasum /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/tmp.tgz
+374 verbose tar unpack /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/tmp.tgz
+375 silly lockFile 06592624-4021-0-46934334957040846-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/package
+376 verbose lock /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/package /Users/cornelis/.npm/06592624-4021-0-46934334957040846-package.lock
+377 silly lockFile 3a64f7c2-4021-0-46934334957040846-tmp-tgz /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/tmp.tgz
+378 verbose lock /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/tmp.tgz /Users/cornelis/.npm/3a64f7c2-4021-0-46934334957040846-tmp-tgz.lock
+379 silly gunzTarPerm modes [ '755', '644' ]
+380 silly gunzTarPerm extractEntry package.json
+381 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+382 silly gunzTarPerm extractEntry README.md
+383 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+384 silly gunzTarPerm extractEntry adm-zip.js
+385 silly gunzTarPerm modified mode [ 'adm-zip.js', 438, 420 ]
+386 silly gunzTarPerm extractEntry zipEntry.js
+387 silly gunzTarPerm modified mode [ 'zipEntry.js', 438, 420 ]
+388 silly gunzTarPerm extractEntry zipFile.js
+389 silly gunzTarPerm modified mode [ 'zipFile.js', 438, 420 ]
+390 silly gunzTarPerm extractEntry headers/entryHeader.js
+391 silly gunzTarPerm modified mode [ 'headers/entryHeader.js', 438, 420 ]
+392 silly gunzTarPerm extractEntry headers/index.js
+393 silly gunzTarPerm modified mode [ 'headers/index.js', 438, 420 ]
+394 silly gunzTarPerm extractEntry headers/mainHeader.js
+395 silly gunzTarPerm modified mode [ 'headers/mainHeader.js', 438, 420 ]
+396 silly gunzTarPerm extractEntry methods/deflater.js
+397 silly gunzTarPerm modified mode [ 'methods/deflater.js', 438, 420 ]
+398 silly gunzTarPerm extractEntry methods/index.js
+399 silly gunzTarPerm modified mode [ 'methods/index.js', 438, 420 ]
+400 silly gunzTarPerm extractEntry methods/inflater.js
+401 silly gunzTarPerm modified mode [ 'methods/inflater.js', 438, 420 ]
+402 silly gunzTarPerm extractEntry MIT-LICENSE.txt
+403 silly gunzTarPerm modified mode [ 'MIT-LICENSE.txt', 438, 420 ]
+404 silly gunzTarPerm extractEntry test/index.js
+405 silly gunzTarPerm modified mode [ 'test/index.js', 438, 420 ]
+406 silly gunzTarPerm extractEntry test/assets/attributes_test/asd/New Text Document.txt
+407 silly gunzTarPerm modified mode [ 'test/assets/attributes_test/asd/New Text Document.txt',
+407 silly gunzTarPerm   438,
+407 silly gunzTarPerm   420 ]
+408 silly gunzTarPerm extractEntry test/assets/attributes_test/blank file.txt
+409 silly gunzTarPerm modified mode [ 'test/assets/attributes_test/blank file.txt', 438, 420 ]
+410 silly gunzTarPerm extractEntry test/assets/attributes_test/New folder/hidden.txt
+411 silly gunzTarPerm modified mode [ 'test/assets/attributes_test/New folder/hidden.txt', 438, 420 ]
+412 silly gunzTarPerm extractEntry test/assets/attributes_test/New folder/hidden_readonly.txt
+413 silly gunzTarPerm modified mode [ 'test/assets/attributes_test/New folder/hidden_readonly.txt',
+413 silly gunzTarPerm   438,
+413 silly gunzTarPerm   420 ]
+414 silly gunzTarPerm extractEntry test/assets/attributes_test/New folder/readonly.txt
+415 silly gunzTarPerm modified mode [ 'test/assets/attributes_test/New folder/readonly.txt',
+415 silly gunzTarPerm   438,
+415 silly gunzTarPerm   420 ]
+416 silly gunzTarPerm extractEntry test/assets/attributes_test/New folder/somefile.txt
+417 silly gunzTarPerm modified mode [ 'test/assets/attributes_test/New folder/somefile.txt',
+417 silly gunzTarPerm   438,
+417 silly gunzTarPerm   420 ]
+418 silly gunzTarPerm extractEntry test/assets/attributes_test.zip
+419 silly gunzTarPerm modified mode [ 'test/assets/attributes_test.zip', 438, 420 ]
+420 silly gunzTarPerm extractEntry test/assets/fast.zip
+421 silly gunzTarPerm modified mode [ 'test/assets/fast.zip', 438, 420 ]
+422 silly gunzTarPerm extractEntry test/assets/fastest.zip
+423 silly gunzTarPerm modified mode [ 'test/assets/fastest.zip', 438, 420 ]
+424 silly gunzTarPerm extractEntry test/assets/linux_arc.zip
+425 silly gunzTarPerm modified mode [ 'test/assets/linux_arc.zip', 438, 420 ]
+426 silly gunzTarPerm extractEntry test/assets/maximum.zip
+427 silly gunzTarPerm modified mode [ 'test/assets/maximum.zip', 438, 420 ]
+428 silly gunzTarPerm extractEntry test/assets/normal.zip
+429 silly gunzTarPerm modified mode [ 'test/assets/normal.zip', 438, 420 ]
+430 silly gunzTarPerm extractEntry test/assets/store.zip
+431 silly gunzTarPerm modified mode [ 'test/assets/store.zip', 438, 420 ]
+432 silly gunzTarPerm extractEntry test/assets/ultra.zip
+433 silly gunzTarPerm modified mode [ 'test/assets/ultra.zip', 438, 420 ]
+434 silly gunzTarPerm extractEntry util/constants.js
+435 silly gunzTarPerm modified mode [ 'util/constants.js', 438, 420 ]
+436 silly gunzTarPerm extractEntry util/errors.js
+437 silly gunzTarPerm modified mode [ 'util/errors.js', 438, 420 ]
+438 silly gunzTarPerm extractEntry util/fattr.js
+439 silly gunzTarPerm modified mode [ 'util/fattr.js', 438, 420 ]
+440 silly gunzTarPerm extractEntry util/index.js
+441 silly gunzTarPerm modified mode [ 'util/index.js', 438, 420 ]
+442 silly gunzTarPerm extractEntry util/utils.js
+443 silly gunzTarPerm modified mode [ 'util/utils.js', 438, 420 ]
+444 verbose read json /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/package/package.json
+445 silly lockFile 06592624-4021-0-46934334957040846-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/package
+446 silly lockFile 06592624-4021-0-46934334957040846-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/package
+447 silly lockFile 3a64f7c2-4021-0-46934334957040846-tmp-tgz /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/tmp.tgz
+448 silly lockFile 3a64f7c2-4021-0-46934334957040846-tmp-tgz /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/tmp.tgz
+449 verbose from cache /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/package/package.json
+450 verbose tar pack [ '/Users/cornelis/.npm/adm-zip/0.4.3/package.tgz',
+450 verbose tar pack   '/var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/package' ]
+451 verbose tarball /Users/cornelis/.npm/adm-zip/0.4.3/package.tgz
+452 verbose folder /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/package
+453 silly lockFile 06592624-4021-0-46934334957040846-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/package
+454 verbose lock /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/package /Users/cornelis/.npm/06592624-4021-0-46934334957040846-package.lock
+455 silly lockFile ac9f4a27-is-npm-adm-zip-0-4-3-package-tgz /Users/cornelis/.npm/adm-zip/0.4.3/package.tgz
+456 verbose lock /Users/cornelis/.npm/adm-zip/0.4.3/package.tgz /Users/cornelis/.npm/ac9f4a27-is-npm-adm-zip-0-4-3-package-tgz.lock
+457 silly lockFile 06592624-4021-0-46934334957040846-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/package
+458 silly lockFile 06592624-4021-0-46934334957040846-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699194021-0.46934334957040846/package
+459 silly lockFile ac9f4a27-is-npm-adm-zip-0-4-3-package-tgz /Users/cornelis/.npm/adm-zip/0.4.3/package.tgz
+460 silly lockFile ac9f4a27-is-npm-adm-zip-0-4-3-package-tgz /Users/cornelis/.npm/adm-zip/0.4.3/package.tgz
+461 silly lockFile 10a1a343-rnelis-npm-adm-zip-0-4-3-package /Users/cornelis/.npm/adm-zip/0.4.3/package
+462 verbose lock /Users/cornelis/.npm/adm-zip/0.4.3/package /Users/cornelis/.npm/10a1a343-rnelis-npm-adm-zip-0-4-3-package.lock
+463 silly lockFile 10a1a343-rnelis-npm-adm-zip-0-4-3-package /Users/cornelis/.npm/adm-zip/0.4.3/package
+464 silly lockFile 10a1a343-rnelis-npm-adm-zip-0-4-3-package /Users/cornelis/.npm/adm-zip/0.4.3/package
+465 verbose tar unpack /Users/cornelis/.npm/adm-zip/0.4.3/package.tgz
+466 silly lockFile 10a1a343-rnelis-npm-adm-zip-0-4-3-package /Users/cornelis/.npm/adm-zip/0.4.3/package
+467 verbose lock /Users/cornelis/.npm/adm-zip/0.4.3/package /Users/cornelis/.npm/10a1a343-rnelis-npm-adm-zip-0-4-3-package.lock
+468 silly lockFile ac9f4a27-is-npm-adm-zip-0-4-3-package-tgz /Users/cornelis/.npm/adm-zip/0.4.3/package.tgz
+469 verbose lock /Users/cornelis/.npm/adm-zip/0.4.3/package.tgz /Users/cornelis/.npm/ac9f4a27-is-npm-adm-zip-0-4-3-package-tgz.lock
+470 silly gunzTarPerm modes [ '755', '644' ]
+471 silly gunzTarPerm extractEntry package.json
+472 silly gunzTarPerm extractEntry README.md
+473 silly gunzTarPerm extractEntry adm-zip.js
+474 silly gunzTarPerm extractEntry zipEntry.js
+475 silly gunzTarPerm extractEntry zipFile.js
+476 silly gunzTarPerm extractEntry headers/entryHeader.js
+477 silly gunzTarPerm extractEntry headers/index.js
+478 silly gunzTarPerm extractEntry headers/mainHeader.js
+479 silly gunzTarPerm extractEntry methods/deflater.js
+480 silly gunzTarPerm extractEntry methods/index.js
+481 silly gunzTarPerm extractEntry methods/inflater.js
+482 silly gunzTarPerm extractEntry MIT-LICENSE.txt
+483 silly gunzTarPerm extractEntry test/index.js
+484 silly gunzTarPerm extractEntry test/assets/attributes_test/asd/New Text Document.txt
+485 silly gunzTarPerm extractEntry test/assets/attributes_test/blank file.txt
+486 silly gunzTarPerm extractEntry test/assets/attributes_test/New folder/hidden.txt
+487 silly gunzTarPerm extractEntry test/assets/attributes_test/New folder/hidden_readonly.txt
+488 silly gunzTarPerm extractEntry test/assets/attributes_test/New folder/readonly.txt
+489 silly gunzTarPerm extractEntry test/assets/attributes_test/New folder/somefile.txt
+490 silly gunzTarPerm extractEntry test/assets/attributes_test.zip
+491 silly gunzTarPerm extractEntry test/assets/fast.zip
+492 silly gunzTarPerm extractEntry test/assets/fastest.zip
+493 silly gunzTarPerm extractEntry test/assets/linux_arc.zip
+494 silly gunzTarPerm extractEntry test/assets/maximum.zip
+495 silly gunzTarPerm extractEntry test/assets/normal.zip
+496 silly gunzTarPerm extractEntry test/assets/store.zip
+497 silly gunzTarPerm extractEntry test/assets/ultra.zip
+498 silly gunzTarPerm extractEntry util/constants.js
+499 silly gunzTarPerm extractEntry util/errors.js
+500 silly gunzTarPerm extractEntry util/fattr.js
+501 silly gunzTarPerm extractEntry util/index.js
+502 silly gunzTarPerm extractEntry util/utils.js
+503 verbose read json /Users/cornelis/.npm/adm-zip/0.4.3/package/package.json
+504 silly lockFile 10a1a343-rnelis-npm-adm-zip-0-4-3-package /Users/cornelis/.npm/adm-zip/0.4.3/package
+505 silly lockFile 10a1a343-rnelis-npm-adm-zip-0-4-3-package /Users/cornelis/.npm/adm-zip/0.4.3/package
+506 silly lockFile ac9f4a27-is-npm-adm-zip-0-4-3-package-tgz /Users/cornelis/.npm/adm-zip/0.4.3/package.tgz
+507 silly lockFile ac9f4a27-is-npm-adm-zip-0-4-3-package-tgz /Users/cornelis/.npm/adm-zip/0.4.3/package.tgz
+508 silly shasum updated bytes 37019
+509 info shasum 66e433bacb0061546072d9d178179c7ed0556c76
+509 info shasum /Users/cornelis/.npm/adm-zip/0.4.3/package.tgz
+510 verbose from cache /Users/cornelis/.npm/adm-zip/0.4.3/package/package.json
+511 verbose chmod /Users/cornelis/.npm/adm-zip/0.4.3/package.tgz 644
+512 verbose chown /Users/cornelis/.npm/adm-zip/0.4.3/package.tgz [ 501, 20 ]
+513 silly lockFile 918c9c0c-js-org-adm-zip-adm-zip-0-4-3-tgz https://registry.npmjs.org/adm-zip/-/adm-zip-0.4.3.tgz
+514 silly lockFile 918c9c0c-js-org-adm-zip-adm-zip-0-4-3-tgz https://registry.npmjs.org/adm-zip/-/adm-zip-0.4.3.tgz
+515 silly lockFile db902cdf-adm-zip-0-4-3 adm-zip@0.4.3
+516 silly lockFile db902cdf-adm-zip-0-4-3 adm-zip@0.4.3
+517 silly lockFile 85aebe73-adm-zip-0-4-3 adm-zip@>=0.4.3
+518 silly lockFile 85aebe73-adm-zip-0-4-3 adm-zip@>=0.4.3
+519 http 200 https://registry.npmjs.org/requirejs/-/requirejs-2.1.8.tgz
+520 silly shasum updated bytes 40960
+521 silly shasum updated bytes 40960
+522 silly shasum updated bytes 40960
+523 silly shasum updated bytes 40960
+524 silly shasum updated bytes 40960
+525 silly shasum updated bytes 12332
+526 info shasum f0dfa656d60d404947da796f9c661d92c1b0257a
+526 info shasum /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/tmp.tgz
+527 verbose tar unpack /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/tmp.tgz
+528 silly lockFile ff5325c0-92179-0-6108213362749666-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/package
+529 verbose lock /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/package /Users/cornelis/.npm/ff5325c0-92179-0-6108213362749666-package.lock
+530 silly lockFile 1f0741fb-92179-0-6108213362749666-tmp-tgz /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/tmp.tgz
+531 verbose lock /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/tmp.tgz /Users/cornelis/.npm/1f0741fb-92179-0-6108213362749666-tmp-tgz.lock
+532 silly gunzTarPerm modes [ '755', '644' ]
+533 silly gunzTarPerm extractEntry package.json
+534 http 200 https://registry.npmjs.org/unzip/-/unzip-0.1.8.tgz
+535 silly gunzTarPerm extractEntry README.md
+536 silly gunzTarPerm extractEntry require.js
+537 silly gunzTarPerm extractEntry bin/r.js
+538 verbose read json /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/package/package.json
+539 silly lockFile ff5325c0-92179-0-6108213362749666-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/package
+540 silly lockFile ff5325c0-92179-0-6108213362749666-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/package
+541 silly lockFile 1f0741fb-92179-0-6108213362749666-tmp-tgz /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/tmp.tgz
+542 silly lockFile 1f0741fb-92179-0-6108213362749666-tmp-tgz /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/tmp.tgz
+543 verbose from cache /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/package/package.json
+544 verbose tar pack [ '/Users/cornelis/.npm/requirejs/2.1.8/package.tgz',
+544 verbose tar pack   '/var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/package' ]
+545 verbose tarball /Users/cornelis/.npm/requirejs/2.1.8/package.tgz
+546 verbose folder /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/package
+547 silly lockFile ff5325c0-92179-0-6108213362749666-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/package
+548 verbose lock /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/package /Users/cornelis/.npm/ff5325c0-92179-0-6108213362749666-package.lock
+549 silly lockFile 326ca9a4--npm-requirejs-2-1-8-package-tgz /Users/cornelis/.npm/requirejs/2.1.8/package.tgz
+550 verbose lock /Users/cornelis/.npm/requirejs/2.1.8/package.tgz /Users/cornelis/.npm/326ca9a4--npm-requirejs-2-1-8-package-tgz.lock
+551 silly shasum updated bytes 8911
+552 info shasum b6ca171798242150b06fca320544592231aeb158
+552 info shasum /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/tmp.tgz
+553 verbose tar unpack /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/tmp.tgz
+554 silly lockFile 0bc5c867-95625-0-5661465297453105-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/package
+555 verbose lock /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/package /Users/cornelis/.npm/0bc5c867-95625-0-5661465297453105-package.lock
+556 silly lockFile 86ba2fc2-95625-0-5661465297453105-tmp-tgz /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/tmp.tgz
+557 verbose lock /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/tmp.tgz /Users/cornelis/.npm/86ba2fc2-95625-0-5661465297453105-tmp-tgz.lock
+558 silly gunzTarPerm modes [ '755', '644' ]
+559 silly gunzTarPerm extractEntry package.json
+560 silly gunzTarPerm extractEntry .npmignore
+561 silly gunzTarPerm extractEntry README.md
+562 silly gunzTarPerm extractEntry LICENSE
+563 silly gunzTarPerm extractEntry unzip.js
+564 silly gunzTarPerm extractEntry .travis.yml
+565 silly gunzTarPerm extractEntry lib/entry.js
+566 silly gunzTarPerm extractEntry lib/extract.js
+567 silly gunzTarPerm extractEntry lib/parse.js
+568 silly gunzTarPerm extractEntry test/compressed.js
+569 silly gunzTarPerm extractEntry test/fileSizeUnknownFlag.js
+570 silly gunzTarPerm extractEntry test/pipeSingleEntry.js
+571 silly gunzTarPerm extractEntry test/uncompressed.js
+572 silly gunzTarPerm extractEntry testData/compressed-OSX-Finder/archive.zip
+573 silly gunzTarPerm extractEntry testData/compressed-OSX-Finder/inflated/dir/fileInsideDir.txt
+574 silly gunzTarPerm extractEntry testData/compressed-OSX-Finder/inflated/file.txt
+575 silly gunzTarPerm extractEntry testData/compressed-flags-set/archive.zip
+576 silly gunzTarPerm extractEntry testData/compressed-flags-set/inflated/dir/fileInsideDir.txt
+577 silly gunzTarPerm extractEntry testData/compressed-flags-set/inflated/file.txt
+578 silly gunzTarPerm extractEntry testData/compressed-standard/archive.zip
+579 silly gunzTarPerm extractEntry testData/compressed-standard/inflated/dir/fileInsideDir.txt
+580 silly gunzTarPerm extractEntry testData/compressed-standard/inflated/file.txt
+581 silly gunzTarPerm extractEntry testData/uncompressed/archive.zip
+582 silly gunzTarPerm extractEntry testData/uncompressed/inflated/dir/fileInsideDir.txt
+583 silly gunzTarPerm extractEntry testData/uncompressed/inflated/file.txt
+584 verbose read json /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/package/package.json
+585 silly lockFile 0bc5c867-95625-0-5661465297453105-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/package
+586 silly lockFile 0bc5c867-95625-0-5661465297453105-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/package
+587 silly lockFile 86ba2fc2-95625-0-5661465297453105-tmp-tgz /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/tmp.tgz
+588 silly lockFile 86ba2fc2-95625-0-5661465297453105-tmp-tgz /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/tmp.tgz
+589 verbose from cache /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/package/package.json
+590 verbose tar pack [ '/Users/cornelis/.npm/unzip/0.1.8/package.tgz',
+590 verbose tar pack   '/var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/package' ]
+591 verbose tarball /Users/cornelis/.npm/unzip/0.1.8/package.tgz
+592 verbose folder /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/package
+593 silly lockFile 0bc5c867-95625-0-5661465297453105-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/package
+594 verbose lock /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/package /Users/cornelis/.npm/0bc5c867-95625-0-5661465297453105-package.lock
+595 silly lockFile d1b64c83-elis-npm-unzip-0-1-8-package-tgz /Users/cornelis/.npm/unzip/0.1.8/package.tgz
+596 verbose lock /Users/cornelis/.npm/unzip/0.1.8/package.tgz /Users/cornelis/.npm/d1b64c83-elis-npm-unzip-0-1-8-package-tgz.lock
+597 silly lockFile 0bc5c867-95625-0-5661465297453105-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/package
+598 silly lockFile 0bc5c867-95625-0-5661465297453105-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699195625-0.5661465297453105/package
+599 silly lockFile d1b64c83-elis-npm-unzip-0-1-8-package-tgz /Users/cornelis/.npm/unzip/0.1.8/package.tgz
+600 silly lockFile d1b64c83-elis-npm-unzip-0-1-8-package-tgz /Users/cornelis/.npm/unzip/0.1.8/package.tgz
+601 silly lockFile fa80a533-cornelis-npm-unzip-0-1-8-package /Users/cornelis/.npm/unzip/0.1.8/package
+602 verbose lock /Users/cornelis/.npm/unzip/0.1.8/package /Users/cornelis/.npm/fa80a533-cornelis-npm-unzip-0-1-8-package.lock
+603 silly lockFile fa80a533-cornelis-npm-unzip-0-1-8-package /Users/cornelis/.npm/unzip/0.1.8/package
+604 silly lockFile fa80a533-cornelis-npm-unzip-0-1-8-package /Users/cornelis/.npm/unzip/0.1.8/package
+605 verbose tar unpack /Users/cornelis/.npm/unzip/0.1.8/package.tgz
+606 silly lockFile fa80a533-cornelis-npm-unzip-0-1-8-package /Users/cornelis/.npm/unzip/0.1.8/package
+607 verbose lock /Users/cornelis/.npm/unzip/0.1.8/package /Users/cornelis/.npm/fa80a533-cornelis-npm-unzip-0-1-8-package.lock
+608 silly lockFile d1b64c83-elis-npm-unzip-0-1-8-package-tgz /Users/cornelis/.npm/unzip/0.1.8/package.tgz
+609 verbose lock /Users/cornelis/.npm/unzip/0.1.8/package.tgz /Users/cornelis/.npm/d1b64c83-elis-npm-unzip-0-1-8-package-tgz.lock
+610 silly gunzTarPerm modes [ '755', '644' ]
+611 silly gunzTarPerm extractEntry package.json
+612 silly gunzTarPerm extractEntry .npmignore
+613 silly gunzTarPerm extractEntry README.md
+614 silly gunzTarPerm extractEntry LICENSE
+615 silly gunzTarPerm extractEntry unzip.js
+616 silly gunzTarPerm extractEntry .travis.yml
+617 silly gunzTarPerm extractEntry lib/entry.js
+618 silly gunzTarPerm extractEntry lib/extract.js
+619 silly gunzTarPerm extractEntry lib/parse.js
+620 silly gunzTarPerm extractEntry test/compressed.js
+621 silly gunzTarPerm extractEntry test/fileSizeUnknownFlag.js
+622 silly gunzTarPerm extractEntry test/pipeSingleEntry.js
+623 silly gunzTarPerm extractEntry test/uncompressed.js
+624 silly gunzTarPerm extractEntry testData/compressed-flags-set/archive.zip
+625 silly gunzTarPerm extractEntry testData/compressed-flags-set/inflated/dir/fileInsideDir.txt
+626 silly gunzTarPerm extractEntry testData/compressed-flags-set/inflated/file.txt
+627 silly gunzTarPerm extractEntry testData/compressed-OSX-Finder/archive.zip
+628 silly gunzTarPerm extractEntry testData/compressed-OSX-Finder/inflated/dir/fileInsideDir.txt
+629 silly gunzTarPerm extractEntry testData/compressed-OSX-Finder/inflated/file.txt
+630 silly gunzTarPerm extractEntry testData/compressed-standard/archive.zip
+631 silly gunzTarPerm extractEntry testData/compressed-standard/inflated/dir/fileInsideDir.txt
+632 silly gunzTarPerm extractEntry testData/compressed-standard/inflated/file.txt
+633 silly gunzTarPerm extractEntry testData/uncompressed/archive.zip
+634 silly gunzTarPerm extractEntry testData/uncompressed/inflated/dir/fileInsideDir.txt
+635 silly gunzTarPerm extractEntry testData/uncompressed/inflated/file.txt
+636 verbose read json /Users/cornelis/.npm/unzip/0.1.8/package/package.json
+637 silly lockFile fa80a533-cornelis-npm-unzip-0-1-8-package /Users/cornelis/.npm/unzip/0.1.8/package
+638 silly lockFile fa80a533-cornelis-npm-unzip-0-1-8-package /Users/cornelis/.npm/unzip/0.1.8/package
+639 silly lockFile d1b64c83-elis-npm-unzip-0-1-8-package-tgz /Users/cornelis/.npm/unzip/0.1.8/package.tgz
+640 silly lockFile d1b64c83-elis-npm-unzip-0-1-8-package-tgz /Users/cornelis/.npm/unzip/0.1.8/package.tgz
+641 silly shasum updated bytes 8924
+642 info shasum 7ccf7f3a214474760af4ee39d7758a1a3fae5393
+642 info shasum /Users/cornelis/.npm/unzip/0.1.8/package.tgz
+643 verbose from cache /Users/cornelis/.npm/unzip/0.1.8/package/package.json
+644 verbose chmod /Users/cornelis/.npm/unzip/0.1.8/package.tgz 644
+645 verbose chown /Users/cornelis/.npm/unzip/0.1.8/package.tgz [ 501, 20 ]
+646 silly lockFile 8d03336f--npmjs-org-unzip-unzip-0-1-8-tgz https://registry.npmjs.org/unzip/-/unzip-0.1.8.tgz
+647 silly lockFile 8d03336f--npmjs-org-unzip-unzip-0-1-8-tgz https://registry.npmjs.org/unzip/-/unzip-0.1.8.tgz
+648 silly lockFile 8581558e-unzip-0-1-8 unzip@0.1.8
+649 silly lockFile 8581558e-unzip-0-1-8 unzip@0.1.8
+650 silly lockFile 52860824-unzip-0-1-8 unzip@>=0.1.8
+651 silly lockFile 52860824-unzip-0-1-8 unzip@>=0.1.8
+652 silly lockFile ff5325c0-92179-0-6108213362749666-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/package
+653 silly lockFile ff5325c0-92179-0-6108213362749666-package /var/folders/d3/g0lwnhjd5lg6rvwtl1lj4lkh0000gn/T/npm-7445/1375699192179-0.6108213362749666/package
+654 silly lockFile 326ca9a4--npm-requirejs-2-1-8-package-tgz /Users/cornelis/.npm/requirejs/2.1.8/package.tgz
+655 silly lockFile 326ca9a4--npm-requirejs-2-1-8-package-tgz /Users/cornelis/.npm/requirejs/2.1.8/package.tgz
+656 silly lockFile 2b9f057a-elis-npm-requirejs-2-1-8-package /Users/cornelis/.npm/requirejs/2.1.8/package
+657 verbose lock /Users/cornelis/.npm/requirejs/2.1.8/package /Users/cornelis/.npm/2b9f057a-elis-npm-requirejs-2-1-8-package.lock
+658 silly lockFile 2b9f057a-elis-npm-requirejs-2-1-8-package /Users/cornelis/.npm/requirejs/2.1.8/package
+659 silly lockFile 2b9f057a-elis-npm-requirejs-2-1-8-package /Users/cornelis/.npm/requirejs/2.1.8/package
+660 verbose tar unpack /Users/cornelis/.npm/requirejs/2.1.8/package.tgz
+661 silly lockFile 2b9f057a-elis-npm-requirejs-2-1-8-package /Users/cornelis/.npm/requirejs/2.1.8/package
+662 verbose lock /Users/cornelis/.npm/requirejs/2.1.8/package /Users/cornelis/.npm/2b9f057a-elis-npm-requirejs-2-1-8-package.lock
+663 silly lockFile 326ca9a4--npm-requirejs-2-1-8-package-tgz /Users/cornelis/.npm/requirejs/2.1.8/package.tgz
+664 verbose lock /Users/cornelis/.npm/requirejs/2.1.8/package.tgz /Users/cornelis/.npm/326ca9a4--npm-requirejs-2-1-8-package-tgz.lock
+665 silly gunzTarPerm modes [ '755', '644' ]
+666 silly gunzTarPerm extractEntry package.json
+667 silly gunzTarPerm extractEntry README.md
+668 silly gunzTarPerm extractEntry require.js
+669 silly gunzTarPerm extractEntry bin/r.js
+670 verbose read json /Users/cornelis/.npm/requirejs/2.1.8/package/package.json
+671 silly lockFile 2b9f057a-elis-npm-requirejs-2-1-8-package /Users/cornelis/.npm/requirejs/2.1.8/package
+672 silly lockFile 2b9f057a-elis-npm-requirejs-2-1-8-package /Users/cornelis/.npm/requirejs/2.1.8/package
+673 silly lockFile 326ca9a4--npm-requirejs-2-1-8-package-tgz /Users/cornelis/.npm/requirejs/2.1.8/package.tgz
+674 silly lockFile 326ca9a4--npm-requirejs-2-1-8-package-tgz /Users/cornelis/.npm/requirejs/2.1.8/package.tgz
+675 silly shasum updated bytes 40960
+676 silly shasum updated bytes 40960
+677 silly shasum updated bytes 40960
+678 silly shasum updated bytes 40960
+679 silly shasum updated bytes 40960
+680 silly shasum updated bytes 12332
+681 info shasum 6a99e83b8f4b604288b7ed1ff2232581d299a723
+681 info shasum /Users/cornelis/.npm/requirejs/2.1.8/package.tgz
+682 verbose from cache /Users/cornelis/.npm/requirejs/2.1.8/package/package.json
+683 verbose chmod /Users/cornelis/.npm/requirejs/2.1.8/package.tgz 644
+684 verbose chown /Users/cornelis/.npm/requirejs/2.1.8/package.tgz [ 501, 20 ]
+685 silly lockFile 88e4e3be-rg-requirejs-requirejs-2-1-8-tgz https://registry.npmjs.org/requirejs/-/requirejs-2.1.8.tgz
+686 silly lockFile 88e4e3be-rg-requirejs-requirejs-2-1-8-tgz https://registry.npmjs.org/requirejs/-/requirejs-2.1.8.tgz
+687 silly lockFile f58478c4-requirejs-2-1-8 requirejs@2.1.8
+688 silly lockFile f58478c4-requirejs-2-1-8 requirejs@2.1.8
+689 silly lockFile 06938e42-requirejs-2-1-2 requirejs@>=2.1.2
+690 silly lockFile 06938e42-requirejs-2-1-2 requirejs@>=2.1.2
+691 http 304 https://registry.npmjs.org/rimraf
+692 silly registry.get cb [ 304,
+692 silly registry.get   { server: 'CouchDB/1.3.0 (Erlang OTP/R15B03)',
+692 silly registry.get     etag: '"50X3LWQDSY1SAULXQ7QRKW4PE"',
+692 silly registry.get     date: 'Mon, 05 Aug 2013 10:40:27 GMT',
+692 silly registry.get     'content-length': '0' } ]
+693 verbose etag rimraf from cache
+694 error Error: write EPIPE
+694 error     at errnoException (net.js:770:11)
+694 error     at Object.afterWrite (net.js:594:19)
+695 error If you need help, you may report this log at:
+695 error     <http://github.com/isaacs/npm/issues>
+695 error or email it to:
+695 error     <npm-@googlegroups.com>
+696 error System Darwin 12.4.1
+697 error command "/Users/cornelis/Sites/Patterns/.node/bin/node" "/Users/cornelis/Sites/Patterns/.node/bin/npm" "install" "bungle" "--force"
+698 error cwd /Users/cornelis/Sites/Patterns
+699 error node -v v0.8.20
+700 error npm -v 1.2.11
+701 error syscall write
+702 error code EPIPE
+703 error errno EPIPE
+704 verbose exit [ 1, true ]
