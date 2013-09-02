@@ -68,6 +68,11 @@ define([
                         var events = _.parseEvents($el);
                         callback(events);
                     },
+                    eventRender: function(event, element) {
+                        if (event.titleAttr) {
+                            element.attr('title', event.titleAttr);
+                        }
+                    },
                     firstHour: cfg.first.hour,
                     axisFormat: cfg.timeFormat,
                     timeFormat: cfg.timeFormat,
@@ -285,6 +290,7 @@ define([
                 var ev = {
                     title: $('.title', event).text().trim() +
                         (location ? (' (' + location + ')') : ''),
+                    titleAttr: $(event).attr('title'),
                     start: $('.start', event).attr('datetime'),
                     end: $('.end', event).attr('datetime'),
                     allDay: $(event).hasClass('all-day'),
