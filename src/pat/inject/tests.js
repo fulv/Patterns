@@ -1,4 +1,4 @@
-define(["pat-inject", "pat-utils"], function(pattern, utils) {
+define(["pat-inject", "pat-utils"], function(Inject, utils) {
 
     describe("inject-pattern", function() {
 
@@ -12,24 +12,28 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
 
         describe("rebaseHTML", function() {
             it("Basic markup with DOCTYPE", function() {
+                var pattern = new Inject($('<a class="pat-inject" href="/content.html"></a>'));
                 expect(
                     pattern._rebaseHTML("base", "<!DOCTYPE html>\n<p>This is a simple <em>test</em></p>"))
                     .toBe("<p>This is a simple <em>test</em></p>");
             });
 
             it("Basic markup", function() {
+                var pattern = new Inject($('<a class="pat-inject" href="/content.html"></a>'));
                 expect(
                     pattern._rebaseHTML("base", "<p>This is a simple <em>test</em></p>"))
                     .toBe("<p>This is a simple <em>test</em></p>");
             });
 
             it("Recover from unclosed tags", function() {
+                var pattern = new Inject($('<a class="pat-inject" href="/content.html"></a>'));
                 expect(
                     pattern._rebaseHTML("base", "<p>This is a simple <em>test</p>"))
                     .toBe("<p>This is a simple <em>test</em></p>");
             });
 
             it("Element without link attribute", function() {
+                var pattern = new Inject($('<a class="pat-inject" href="/content.html"></a>'));
                 spyOn(utils, "rebaseURL");
                 expect(
                     pattern._rebaseHTML("base", "<a>This is a test</a>"))
@@ -38,6 +42,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
             });
 
             it("Element with link attribute", function() {
+                var pattern = new Inject($('<a class="pat-inject" href="/content.html"></a>'));
                 spyOn(utils, "rebaseURL").andReturn("REBASED");
                 expect(
                     pattern._rebaseHTML("base", "<a href=\"example.com\">This is a test</a>"))
@@ -46,6 +51,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
             });
 
             it("Automatically fix casing of attribute", function() {
+                var pattern = new Inject($('<a class="pat-inject" href="/content.html"></a>'));
                 spyOn(utils, "rebaseURL").andReturn("REBASED");
                 expect(
                     pattern._rebaseHTML("base", "<a HrEf=\"example.com\">This is a test</a>"))
@@ -53,6 +59,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
             });
 
             it("Check if image is rebased correctly", function() {
+                var pattern = new Inject($('<a class="pat-inject" href="/content.html"></a>'));
                 spyOn(utils, "rebaseURL").andReturn("REBASED");
                 expect(
                     pattern._rebaseHTML("base", "<img src=\"example.com\">"))
@@ -60,6 +67,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
             });
 
             it("Leave non attribute occurences of src intact", function() {
+                var pattern = new Inject($('<a class="pat-inject" href="/content.html"></a>'));
                 spyOn(utils, "rebaseURL").andReturn("REBASED");
                 expect(
                     pattern._rebaseHTML("base", "<p>This string has    src = \"foo\" , src= bar , and SrC='foo'</p>"))
@@ -69,14 +77,16 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
 
         describe("parseRawHtml", function() {
             it("Roundtrip attributes with double quotes", function() {
-                var value = "{\"plugins\": \"paste\", \"content_css\": \"/_themes/Style/tiny-body.css\"}",
+                var pattern = new Inject($('<a class="pat-inject" href="/content.html"></a>')),
+                    value = "{\"plugins\": \"paste\", \"content_css\": \"/_themes/Style/tiny-body.css\"}",
                     input = "<a data-tinymce-json='" + value + "'>Test</a>",
                     $output = pattern._parseRawHtml(input, null);
                 expect($output.find("a").attr("data-tinymce-json")).toBe(value);
             });
 
             it("Roundtrip attributes with single quotes", function() {
-                var value = "{'plugins': 'paste', 'content_css': '/_themes/Style/tiny-body.css'}",
+                var pattern = new Inject($('<a class="pat-inject" href="/content.html"></a>')),
+                    value = "{'plugins': 'paste', 'content_css': '/_themes/Style/tiny-body.css'}",
                     input = "<a data-tinymce-json=\"" + value + "\">Test</a>",
                     $output = pattern._parseRawHtml(input, null);
                 expect($output.find("a").attr("data-tinymce-json")).toBe(value);
@@ -90,15 +100,13 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                 beforeEach(function() {
                     $a = $("<a class=\"pat-inject\" href=\"test.html#someid\">link</a>");
                     $target = $("<div id=\"someid\">");
-
                     $("#lab").append($a).append($target);
                 });
 
-
                 it("fall back to href id", function() {
+                    var pattern = new Inject($a);
                     var cfgs = pattern.extractConfig($a);
                     expect(pattern.verifyConfig(cfgs)).toBeTruthy();
-
                     expect(cfgs.length).toBe(1);
                     expect(cfgs[0].source).toBe("#someid");
                     expect(cfgs[0].target).toBe("#someid");
@@ -106,7 +114,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
 
                 it("take first positional option as source and target", function() {
                     var cfgs;
-
+                    var pattern = new Inject($a);
                     $a.attr("data-pat-inject", "#otherid");
                     $target.attr("id", "otherid");
                     cfgs = pattern.extractConfig($a);
@@ -118,7 +126,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
 
                 it("take two positional options as source and target resp.", function() {
                     var cfgs;
-
+                    var pattern = new Inject($a);
                     $a.attr("data-pat-inject", "#otherid #yetanotherid");
                     $target.attr("id", "yetanotherid");
                     cfgs = pattern.extractConfig($a);
@@ -129,6 +137,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                 });
 
                 it("Use trigger as target", function() {
+                    var pattern = new Inject($a);
                     $a.attr("data-pat-inject", "target: self::after");
                     var cfgs = pattern.extractConfig($a);
                     expect(pattern.verifyConfig(cfgs, $a)).toBeTruthy();
@@ -137,6 +146,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                 });
 
                 it("create target if it doesn't exist", function() {
+                    var pattern = new Inject($a);
                     var cfgs = pattern.extractConfig($a);
 
                     $target.remove();
@@ -160,7 +170,6 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                 spyOn($, "ajax");
             });
 
-
             describe("inject on anchor", function() {
                 var $a, $div;
 
@@ -170,18 +179,15 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                     $("#lab").append($a).append($div);
                 });
 
-
                 it("fetches url on click", function() {
-                    pattern.init($a);
-
+                    var pattern = new Inject($a);
                     $a.trigger("click");
-
                     expect($.ajax).toHaveBeenCalled();
                     expect($.ajax.mostRecentCall.args[0].url).toBe("test.html");
                 });
 
                 it("injects into existing div", function() {
-                    pattern.init($a);
+                    var pattern = new Inject($a);
                     $a.trigger("click");
                     answer("<html><body><div id=\"someid\">replacement</div></body></html>");
 
@@ -189,7 +195,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                 });
 
                 it("injects multiple times", function() {
-                    pattern.init($a);
+                    var pattern = new Inject($a);
                     $a.trigger("click");
                     answer("<html><body><div id=\"someid\">replacement</div></body></html>");
                     expect($div.html()).toBe("replacement");
@@ -205,7 +211,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                         $target2 = $("<div id=\"otherid2\" />");
                     $div.append($target1).append($target2);
 
-                    pattern.init($a);
+                    var pattern = new Inject($a);
                     $a.trigger("click");
                     answer("<html><body>" +
                            "<div id=\"someid1\">repl1</div>" +
@@ -222,7 +228,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                         $target2 = $("<div class=\"someclass\" />");
                     $div.append($target1).append($target2);
 
-                    pattern.init($a);
+                    var pattern = new Inject($a);
                     $a.trigger("click");
                     answer("<html><body>" +
                            "<div id=\"someid\">repl</div>" +
@@ -236,7 +242,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                     var callback = jasmine.createSpy("patterns-injected");
                     $(document).on("patterns-injected", callback);
 
-                    pattern.init($a);
+                    var pattern = new Inject($a);
                     $a.trigger("click");
 
                     expect($div.hasClass("injecting")).toBeTruthy();
@@ -256,7 +262,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                 it("copies into target if source has ::element", function() {
                     $a.attr("data-pat-inject", "#otherid::element #someid");
 
-                    pattern.init($a);
+                    var pattern = new Inject($a);
                     $a.trigger("click");
                     answer("<html><body>" +
                            "<div id=\"otherid\" class=\"someclass\">repl</div>" +
@@ -270,7 +276,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                     $a.attr("data-pat-inject", "#someid::element #otherid::element");
                     $div.append($("<div id=\"otherid\" />"));
 
-                    pattern.init($a);
+                    var pattern = new Inject($a);
                     $a.trigger("click");
                     answer("<html><body>" +
                            "<div id=\"someid\" class=\"someclass\">repl</div>" +
@@ -286,7 +292,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                         $target2 = $("<div id=\"target2\">content</div>");
                     $div.append($target1).append($target2);
 
-                    pattern.init($a);
+                    var pattern = new Inject($a);
                     $a.trigger("click");
                     answer("<html><body>" +
                            "<div id=\"someid\">repl</div>" +
@@ -300,7 +306,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                     $a.attr("data-pat-inject", "target: #otherid::element::after");
                     $div.append($("<div id=\"otherid\" />"));
 
-                    pattern.init($a);
+                    var pattern = new Inject($a);
                     $a.trigger("click");
                     answer("<html><body>" +
                            "<div id=\"someid\">repl</div>" +
@@ -322,7 +328,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
 
 
                 it("trigger injection on submit", function() {
-                    pattern.init($form);
+                    var pattern = new Inject($form);
                     $form.trigger("submit");
                     answer("<html><body>" +
                            "<div id=\"someid\">repl</div>" +
@@ -335,7 +341,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                     $form.attr("method", "get");
                     $form.append($("<input type=\"text\" name=\"param\" value=\"somevalue\" />"));
 
-                    pattern.init($form);
+                    var pattern = new Inject($form);
                     $form.trigger("submit");
 
                     expect($.ajax).toHaveBeenCalled();
@@ -346,7 +352,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                     $form.attr("method", "post");
                     $form.append($("<input type=\"text\" name=\"param\" value=\"somevalue\" />"));
 
-                    pattern.init($form);
+                    var pattern = new Inject($form);
                     $form.trigger("submit");
 
                     expect($.ajax).toHaveBeenCalled();
@@ -359,7 +365,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                     $form.attr("method", "post");
                     $form.append($submit);
 
-                    pattern.init($form);
+                    var pattern = new Inject($form);
                     $submit.trigger("click");
 
                     expect($.ajax).toHaveBeenCalled();
@@ -374,7 +380,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                         $submit2.attr("formaction", "other.html");
                         $form.append($submit1).append($submit2);
 
-                        pattern.init($form);
+                        var pattern = new Inject($form);
                         $submit2.trigger("click");
 
                         expect($.ajax).toHaveBeenCalled();
@@ -388,7 +394,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                         $submit2.attr("formaction", "other.html");
                         $form.append($submit1).append($submit2);
 
-                        pattern.init($form);
+                        var pattern = new Inject($form);
                         $submit2.trigger("click");
 
                         expect($.ajax).toHaveBeenCalled();
@@ -404,7 +410,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                         $form.append($submit1).append($submit2);
                         $div.append($target);
 
-                        pattern.init($form);
+                        var pattern = new Inject($form);
                         $submit2.trigger("click");
                         answer("<html><body>" +
                                "<div id=\"otherid\">other</div>" +
@@ -426,7 +432,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                         $form.append($submit1).append($submit2);
                         $div.append($target);
 
-                        pattern.init($form);
+                        var pattern = new Inject($form);
                         $submit2.trigger("click");
                         answer("<html><body>" +
                                "<div id=\"otherid\">other</div>" +
@@ -449,7 +455,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                         $form.append($submit1).append($submit2);
                         $div.append($target1).append($target2);
 
-                        pattern.init($form);
+                        var pattern = new Inject($form);
                         $submit2.trigger("click");
                         answer("<html><body>" +
                                "<div id=\"otherid\">other</div>" +
@@ -473,7 +479,7 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
                         $form.append($submit1).append($submit2);
                         $div.append($target1).append($target2);
 
-                        pattern.init($form);
+                        var pattern = new Inject($form);
                         $submit2.trigger("click");
                         answer("<html><body>" +
                                "<div id=\"someid\">some</div>" +
@@ -490,5 +496,4 @@ define(["pat-inject", "pat-utils"], function(pattern, utils) {
             });
         });
     });
-
 });
