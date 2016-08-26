@@ -21,18 +21,21 @@
         .weird:after {
            content: " [weird!]"
         }
+        .high {
+          height: 300px;
+        }
         article {
             width: 70%;
             height: 25em;
             overflow: auto;
             position: absolute;
-            top: 2em;
+            top: 5em;
             right: 0;
         }
         aside {
             width: 29%;
             position: fixed;
-            top: 2em;
+            top: 5em;
             left: 1em;
         }
     </style>
@@ -41,7 +44,7 @@
 	<body>
           <article class="pat-rich">
             <h1>Some more</h1>
-            <p>A lot of stuff above top</p>
+            <p class="high">A lot of stuff above top</p>
             <p id="top">
               <a href="#top" class="pat-scroll">Top</a> |
               <a href="#p1" class="pat-scroll">001</a> |
