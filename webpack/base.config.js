@@ -29,6 +29,17 @@ module.exports = {
         rules: [
             // { test: /fullcalendar/, loader: 'imports-loader?jquery,moment' },
             {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env'],
+                        plugins: ['transform-es2015-arrow-functions']
+                    }
+                }
+            },            
+            {
                 test: require.resolve('jquery'),
                 use: [{
                         loader: 'expose-loader',
