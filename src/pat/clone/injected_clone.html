@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>pat-clone demo page</title>
+    <link rel="stylesheet" href="/style/common.css" type="text/css">
+        <script src="/bundle.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+  <h2>Demo</h2>
+  <div id="content">
+
+    <form action="" class="pat-validation" data-pat-validation="disable-selector: #submit"  novalidate>
+        <div class="measures pat-clone" data-pat-clone="template: #measure-template; remove-behaviour: none;">
+            <div class="measure clone">
+
+                <h2>Protective Measure 1</h2>
+                <p class="functions">
+                    <a class="icon-pencil pat-tooltip" data-pat-tooltip="source:ajax" href="#standard-solutions-1">Pre-fill</a>
+                    <a class="icon-trash remove-clone">Delete measure</a>
+                </p>
+
+                <div id="standard-solutions-1" hidden="hidden">
+                    <p class="info">Select one or more of the common measures</p>
+                    <ol class="add-measure-menu">
+                        <li>
+                            <a class="pat-inject close-panel title" href="#standard-solution-1" data-pat-inject="target: #fields-0; confirm: never;">
+                            <em class="iconified icon-plus-circle">Add</em>Pick A</a>
+                        </li>
+                        <li>
+                            <a class="pat-inject close-panel title" href="#standard-solution-2" data-pat-inject="target: #fields-0; confirm: never;">
+                            <em class="iconified icon-plus-circle">Add</em>Or maybe B</a>
+                        </li>
+                        <li>
+                            <a class="pat-inject close-panel title" href="#standard-solution-3" data-pat-inject="target: #fields-0; confirm: never;">
+                            <em class="iconified icon-plus-circle">Add</em>How about C?</a>
+                        </li>
+                    </ol>
+                </div>
+
+
+                <fieldset class="vertical" id="fields-0">
+                    <input type="hidden" name="measure.id:records">
+                    <label>Description
+                        <dfn class="icon-help-circle iconified pat-tooltip" data-pat-tooltip="source: content; position-list: lt">Describe how to solve the problem</dfn>
+                        <textarea class="actionPlan" type="text" name="measure.action_plan:utf8:ustring:records" rows="3" placeholder="Description of the measure"></textarea>
+                    </label>
+                </fieldset>
+
+            </div>
+        </div>
+
+        <div class="button-bar">
+            <button class="add-clone small pat-button icon-plus-circle" id="addMeasureButton" title="Add another measure" type="button">Add another measure</button>
+        </div>
+
+
+        <div class="measure" id="measure-template" hidden="hidden">
+
+            <h2>Protective Measure #{1}</h2>
+            <p class="functions">
+              <a class="icon-pencil pat-tooltip" data-pat-tooltip="source: ajax" href="#standard-solutions-#{1}">Pre-Fill</a>
+              <a class="icon-trash remove-clone">Delete measure</a>
+            </p>
+
+
+            <div id="standard-solutions-#{1}" hidden="hidden">
+                    <p class="info">Select one or more of the common measures</p>
+                    <ol class="add-measure-menu">
+                        <li>
+                            <a class="pat-inject close-panel title" href="#standard-solution-1" data-pat-inject="target: #fields-#{1}; confirm: never;">
+                            <em class="iconified icon-plus-circle">Add</em>Pick A</a>
+                        </li>
+                        <li>
+                            <a class="pat-inject close-panel title" href="#standard-solution-2" data-pat-inject="target: #fields-#{1}; confirm: never;">
+                            <em class="iconified icon-plus-circle">Add</em>Or maybe B</a>
+                        </li>
+                        <li>
+                            <a class="pat-inject close-panel title" href="#standard-solution-3" data-pat-inject="target: #fields-#{1}; confirm: never;">
+                            <em class="iconified icon-plus-circle">Add</em>how about C?</a>
+                        </li>
+                    </ol>
+            </div>
+
+            <fieldset class="vertical" id="fields-#{1}">
+              <label>Description
+                <dfn class="icon-help-circle iconified pat-tooltip" data-pat-tooltip="source: content; position-list: lt">Describe the measure</dfn>
+                <textarea autofocus="autofocus" class=" actionPlan" name="measure.action_plan:utf8:ustring:records" placeholder="Description of the measure" rows="3"></textarea>
+              </label>
+            </fieldset>
+        </div>
+
+
+        <fieldset class="vertical" id="standard-solution-1" hidden="hidden">
+            <label>Description
+                <dfn class="icon-help-circle iconified pat-tooltip" data-pat-tooltip="source: content; position-list: lt">Describe the measure</dfn>
+                <textarea class="actionPlan" name="measure.action_plan:utf8:ustring:records" placeholder="Description" rows="3">Why don't you try A?</textarea>
+            </label>
+        </fieldset>
+
+        <fieldset class="vertical" id="standard-solution-2" hidden="hidden">
+            <label>Beschreibung
+                <dfn class="icon-help-circle iconified pat-tooltip" data-pat-tooltip="source: content; position-list: lt">Describe the measure</dfn>
+                <textarea class="actionPlan" name="measure.action_plan:utf8:ustring:records" placeholder="Description" rows="3">On the other hand, B is also a nice option</textarea>
+            </label>
+        </fieldset>
+
+        <fieldset class="vertical" id="standard-solution-3" hidden="hidden">
+            <label>Beschreibung
+                <dfn class="icon-help-circle iconified pat-tooltip" data-pat-tooltip="source: content; position-list: lt">Describe the measure</dfn>
+                <textarea class="actionPlan" name="measure.action_plan:utf8:ustring:records" placeholder="Description" rows="3">But let's not forget about C!</textarea>
+            </label>
+        </fieldset>
+
+    </form>
+  </div>
+</body>
+</html>
