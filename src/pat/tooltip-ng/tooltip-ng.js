@@ -38,6 +38,239 @@
      * https://github.com/Patternslib/logging
      */
 
+    const TippyOptions = (() => {
+        return class extends Map {
+
+            constructor($trigger, options) {
+                super(options)
+                this.$trigger = $trigger
+            }
+
+            get(key) {
+                let value = super.get(key)
+                if (key === 'content') {
+                }
+                    //console.log(`XXXXXXX ${key}: ${value}`)
+                return value
+            }
+
+            set(key, value) {
+                if (key === 'content') {
+                    const $close = $('<button/>', {'class': 'close-panel'})
+                        .text('Close')
+
+                    if (typeof value === 'string') {
+                        value = $('<div/>').append($close)
+                            .append($('<div/>').text(value))[0]
+                    } else {
+                        console.log(`XXXXXXX ${key}: ${value}`)
+                        console.log(value[Symbol.toStringTag])
+                        if (value[Symbol.toStringTag].startsWith('HTML')) {
+                        //    debugger
+                            // prepend with a button
+                            //value = $('<div/>')
+                            //    .append($close)
+                            //    .append($(value))
+                            // value = $close.insertBefore($(value).find('*:first'))
+                            //console.log(value)
+                            //$close.insertBefore($(value).find('*:first'))
+                            value = $close.add(value)
+                            debugger
+                            console.log(value)
+                        }
+                    }
+                    value = value
+                }
+                return super.set(key,value)
+            }
+
+            [Symbol.iterator]() {
+                let orig = super[Symbol.iterator]()
+                return orig
+            }
+
+            parse() {
+            const notImplemented = (name) => { log.error(`${name} not implemented`) },
+
+                placement = (pos) => {
+                    const primary = (pos) => ({
+                            t: 'bottom',
+                            r: 'left',
+                            b: 'top',
+                            l: 'right',
+                        }[pos])
+
+                    const secondary = (pos) => ({
+                            l: '-start',
+                            r: '-end',
+                            m: '',
+                            t: '-start',
+                            b: '-end',
+                        }[pos])
+
+                    return `${primary(pos[0])}${secondary(pos[1])}`
+                },
+
+                flipBehavior = (pos) => placement(`${pos[0]}m`),
+
+                parsers = {
+                    position() {
+                        if (this.has('position')) {
+                            const prefs = this.get('position').list
+                            if (prefs.length > 0) {
+                                const pos = prefs[0]
+                                this.set('placement', placement(pos))
+
+                                if (prefs.length > 1) {
+                                    this.set('flipBehavior', prefs.map(flipBehavior))
+                                    this.set('flip', true)
+                                    this.set('flipOnUpdate', true)
+                                }
+                            }
+                            if (this.get('position').policy === 'force') {
+                                this.set('flip', false)
+                                this.set('flipOnUpdate', false)
+                            }
+                            this.delete('position')
+                        }
+                    },
+
+                    height: notImplemented,
+
+                    trigger() {
+                        if (this.get('trigger') === 'hover') {
+                            this.set('trigger', 'mouseenter focus')
+                        }
+                    },
+
+                    closing() {
+                        if (this.has('closing')) {
+                            const klass = this.get('closing'),
+                                handler = tooltip._addClassHandler(klass)
+
+                            this.$trigger.on('pat-tippy-mount', handler)
+                            this.delete('closing')
+                        }
+                    },
+
+                    source() {
+                        if (this.has('source')) {
+                            if (this.get('source') === 'title') {
+                                this.set('content', this.$trigger.attr('title'))
+                            }
+                            if (this.get('source') === 'auto') {
+                                const href = this.$trigger.attr('href')
+                                if (typeof(href) !== 'string') {
+                                    log.error(`href must be specified if 'source' is set to 'auto'`)
+                                    return
+                                }
+                                if (href.indexOf('#') === 0) {
+                                    tooltip._setSource(this, 'content')
+                                } else {
+                                    tooltip._setSource(this, 'ajax')
+                                }
+                            }
+                            if (this.get('source') === 'content') {
+                                const href = this.$trigger.attr('href'),
+                                      is_string = typeof(href) === 'string',
+                                      has_hash = href.indexOf('#') !== -1,
+                                      has_more = href.length > 1
+                                let $content
+
+                                if (is_string && has_hash && has_more) {
+                                    const $el = $('#'+href.split('#')[1])
+                                    $content = $el.children().clone()
+                                } else {
+                                    $content = this.$trigger.children().clone()
+                                    if (!$content.length) {
+                                        const ttext = this.$trigger.text()
+                                        $content = $('<p/>').text(ttext)
+                                    }
+                                }
+                                this.set('content', $content[0])
+                                registry.scan($content[0])
+                            }
+                            if (this.get('source') === 'ajax') {
+                                const $p = $('<progress/>')[0]
+
+                                this.set('content', $p)
+                                this.set('onShow', tooltip._onAjax(this.$trigger))
+                                this.set('onHidden', instance => {
+                                    timelog('ONAJAXHIDDEN')
+                                    instance.setContent($p)
+                                    instance.state.ajax.canFetch = true
+                                })
+                            }
+                            this.delete('source')
+                        }
+                    },
+
+                    ajaxDataType() {
+                        this.delete('ajaxDataType')
+                    },
+
+                    delay() {
+                        if (this.has('delay')) {
+                            this.set('delay', [utils.parseTime(this.get('delay')), 0])
+                        }
+                    },
+
+                    markInactive() {
+                        if (this.get('markInactive')) {
+                            this.$trigger.addClass('inactive')
+                        }
+                        this.delete('markInactive')
+                    },
+
+                    'class': () => {
+                        if (this.has('class')) {
+                            const klass = this.get('class'),
+                                  handler = tooltip._addClassHandler(klass)
+
+                            this.$trigger.on('pat-tippy-mount', handler)
+                            this.delete('class')
+                        }
+                    },
+
+                    target() {
+                        if (this.has('target')) {
+                            if (this.get('target') === 'parent') {
+                                this.set('appendTo', 'parent')
+                            } else if (this.get('target') !== 'body') {
+                                this.set('appendTo', $(this.get('target'))[0])
+                            }
+                            this.delete('target')
+                        }
+                    }
+                }
+
+            for (let arg of this.keys()) {
+                switch (arg) {
+                    case 'ajax-data-type':
+                        arg = 'ajaxDataType'
+                        break
+                    case 'mark-inactive':
+                        arg = 'markInactive'
+                        break
+                }
+                if (!parsers.hasOwnProperty(arg)) {
+                    continue
+                }
+                log.debug(arg)
+                parsers[arg].call(this, arg)
+            }
+
+            if (this.$trigger.attr('title')) {
+                this.$trigger.removeAttr('title')
+            }
+
+            //delete this.$trigger
+            log.debug(Object.fromEntries(this))
+            return Object.fromEntries(this)
+            }
+        }
+    })()
+
     let parser = new Parser('tooltip-ng')
     /* If you'd like your pattern to be configurable via the
      * data-pat-tooltip-ng attribute, then you need to
@@ -63,6 +296,7 @@
     parser.addArgument('position-list', [], all_positions, true)
     parser.addArgument('position-policy', 'auto', ['auto', 'force'])
     parser.addArgument('trigger', 'click', ['click', 'hover'])
+    parser.addArgument('closing', 'auto', ['auto', 'sticky', 'close-button'])
     parser.addArgument('source', 'title', ['auto', 'ajax', 'content', 'content-html', 'title'])
     parser.addArgument('ajax-data-type', 'html', ['html', 'markdown'])
     parser.addArgument('delay')
@@ -72,7 +306,7 @@
 
 
     //return Base.extend({
-    let tooltip = {
+    const tooltip = {
         /* The name is used to store the pattern in a registry and needs to be
          * unique.
          */
@@ -111,189 +345,29 @@
 
                 start = Date.now()
                 const tippy = tooltip.tippy,
-                      $trigger = $(this)
+                      $trigger = $(this),
+                      original_options = parser.parse($trigger, opts)
 
-                tippy.setDefaults(this.defaults)
-                this.options = parser.parse($trigger, opts)
+                let o = tooltip._mutateOptions(original_options)
 
-                /* this.options will now contain the configured pattern properties
+                const tippyopts = new TippyOptions($trigger, Object.entries(o))
+
+                /* o will now contain the configured pattern properties
                  * you've registered with the parser.addArgument method.
                  *
                  * If the user provided any values via the data-pat-tooltip-ng
                  * attribute, those values will already be set.
                  */
 
-                $trigger.data('patterns.tooltip-ng', tooltip._mutateOptions(this.options))
+                $trigger.data('patterns.tooltip-ng', original_options)
                         .on('destroy.pat-tooltip-ng', tooltip._onDestroy)
 
-                this.options = tooltip.parseOptionsForTippy(this.options, $trigger)
-                tippy($trigger[0], this.options)
+                //o = tooltip.parseOptionsForTippy(o, $trigger)
+                tippy.setDefaults(this.defaults)
+                tippy($trigger[0], tippyopts.parse())
+
                 tooltip.setupShowEvents($trigger)
             })
-        },
-
-        parseOptionsForTippy(opts, $trigger) {
-            const notImplemented = (name) => { log.error(`${name} not implemented`) },
-
-                placement = (pos) => {
-                    const primary = (pos) => ({
-                            t: 'bottom',
-                            r: 'left',
-                            b: 'top',
-                            l: 'right',
-                        }[pos])
-
-                    const secondary = (pos) => ({
-                            l: '-start',
-                            r: '-end',
-                            m: '',
-                            t: '-start',
-                            b: '-end',
-                        }[pos])
-
-                    return `${primary(pos[0])}${secondary(pos[1])}`
-                },
-
-                flipBehavior = (pos) => placement(`${pos[0]}m`),
-
-                parsers = {
-                    position() {
-                        if (opts.hasOwnProperty('position')) {
-                            const prefs = opts.position.list
-                            if (prefs.length > 0) {
-                                const pos = prefs[0]
-                                opts.placement = placement(pos)
-
-                                if (prefs.length > 1) {
-                                    opts.flipBehavior = prefs.map(flipBehavior)
-                                    opts.flip = true
-                                    opts.flipOnUpdate = true
-                                }
-                            }
-                            if (opts.position.policy === 'force') {
-                                opts.flip = false
-                                opts.flipOnUpdate = false
-                            }
-                            delete opts.position
-                        }
-                    },
-
-                    height: notImplemented,
-
-                    trigger() {
-                        if (opts.trigger === 'hover') {
-                            opts.trigger = 'mouseenter focus'
-                        }
-                    },
-
-                    closing: notImplemented,
-
-                    source() {
-                        if (opts.hasOwnProperty('source')) {
-                            if (opts.source==='title') {
-                                opts.content = $trigger.attr('title')
-                            }
-                            if (opts.source === 'auto') {
-                                const href = $trigger.attr('href')
-                                if (typeof(href) !== 'string') {
-                                    log.error(`href must be specified if 'source' is set to 'auto'`)
-                                    return
-                                }
-                                if (href.indexOf('#') === 0) {
-                                    tooltip._setSource(opts, 'content')
-                                } else {
-                                    tooltip._setSource(opts, 'ajax')
-                                }
-                            }
-                            if (opts.source==='content') {
-                                const href = $trigger.attr('href'),
-                                      is_string = typeof(href) === 'string',
-                                      has_hash = href.indexOf('#') !== -1,
-                                      has_more = href.length > 1
-                                let $content
-
-                                if (is_string && has_hash && has_more) {
-                                    $content = $('#'+href.split('#')[1]).children().clone()
-                                } else {
-                                    $content = $trigger.children().clone()
-                                    if (!$content.length) {
-                                        $content = $('<p/>').text($trigger.text())
-                                    }
-                                }
-                                opts.content = $content[0]
-                                registry.scan($content[0])
-                            }
-                            if (opts.source==='ajax') {
-                                const $p = $('<progress/>')[0]
-
-                                opts.content = $p
-                                opts.onShow = tooltip._onAjax($trigger)
-                                opts.onHidden = instance => {
-                                    timelog('ONAJAXHIDDEN')
-                                    instance.setContent($p)
-                                    instance.state.ajax.canFetch = true
-                                }
-                            }
-                            delete opts.source
-                        }
-                    },
-
-                    ajaxDataType() {
-                        delete opts.ajaxDataType
-                    },
-
-                    delay() {
-                        if (opts.hasOwnProperty('delay')) {
-                            opts.delay = [utils.parseTime(opts.delay), 0]
-                        }
-                    },
-
-                    markInactive() {
-                        if (opts.markInactive) {
-                            $trigger.addClass('inactive')
-                        }
-                        delete opts.markInactive
-                    },
-
-                    'class': () => {
-                        if (opts.hasOwnProperty('class')) {
-                            const klass = opts.class,
-                                  handler = tooltip._addClassHandler(klass)
-
-                            $trigger.on('pat-tippy-mount', handler)
-                            delete opts.class
-                        }
-                    },
-
-                    target() {
-                        if (opts.hasOwnProperty('target')) {
-                            if (opts.target === 'parent') {
-                                opts.appendTo = 'parent'
-                            } else if (opts.target !== 'body') {
-                                opts.appendTo = $(opts.target)[0]
-                            }
-                            delete opts.target
-                        }
-                    }
-                }
-
-            for (let arg in opts) {
-                switch (arg) {
-                    case 'ajax-data-type':
-                        arg = 'ajaxDataType'
-                        break
-                    case 'mark-inactive':
-                        arg = 'markInactive'
-                        break
-                }
-                log.debug(arg)
-                parsers[arg](arg)
-            }
-
-            if ($trigger.attr('title')) {
-                $trigger.removeAttr('title')
-            }
-            return opts
         },
 
         setupShowEvents($trigger) {
@@ -326,7 +400,12 @@
         },
 
         _setSource(opts, source) {
-            opts.source = source
+            opts.set('source', source)
+            //opts.source = source
+        },
+
+        _setContent(content) {
+            return content
         },
 
         _onDestroy(event) {
@@ -350,7 +429,8 @@
 
         _onMount(instance) {
             timelog('ONMOUNT')
-            $(instance.reference).trigger('pat-tippy-mount', instance.popperChildren.tooltip)
+            const _tip = instance.popperChildren.tooltip
+            $(instance.reference).trigger('pat-tippy-mount', _tip)
         },
 
         _onShow(instance) {// jshint ignore:line
@@ -416,7 +496,11 @@
                   handler = tooltip._ajaxDataTypeHandlers[options.ajaxDataType]
             fetch(src[0]).then(response => {
                 return response.text().then(text => {
-                    instance.setContent(handler(text, src))
+                    const $content = $(handler(text, src))
+                    $("<button/>", {"class": "close-panel"})
+                        .text("Close")
+                        .insertBefore($content.find("*:first"));
+                    instance.setContent($content[0])
                 }).finally(() => {
                     tooltip._onAjaxContentSet(instance)
                 })

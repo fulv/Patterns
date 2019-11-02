@@ -18,8 +18,9 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'tests/specs/*/*.js',
-            'src/pat/*/tests.js',
+//            'tests/specs/*/*.js',
+//            'src/pat/*/tests.js',
+            'src/pat/tooltip-ng/tests.js',
             {
                 pattern: 'src/pat/date-picker/i18n.json',
                 served: true,
@@ -153,8 +154,8 @@ module.exports = function(config) {
                 debug: true,
                 options: {
                     viewportSize: {
-                      width: 1440,
-                      height: 1200
+                      width: 8000,
+                      height: 8000
                     }
                 }
             }
