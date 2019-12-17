@@ -366,6 +366,11 @@
             })
         },
 
+        _mutateOptions(opts) {
+            // shallow copy
+            return Object.assign({}, opts)
+        },
+
         setupShowEvents($trigger) {
             $trigger.on('click.pat-tooltip-ng', tooltip.blockDefault)
         },
@@ -384,11 +389,6 @@
             if (event.preventDefault) {
                 event.preventDefault()
             }
-        },
-
-        _mutateOptions(opts) {
-            // shallow copy
-            return Object.assign({}, opts)
         },
 
         _addClassHandler(klass) {
