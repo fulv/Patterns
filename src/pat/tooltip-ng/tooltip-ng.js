@@ -42,7 +42,7 @@
         return class extends Map {
 
             constructor($trigger, options) {
-                super(options)
+                super(Object.entries(options))
                 this.$trigger = $trigger
             }
 
@@ -50,7 +50,6 @@
                 let value = super.get(key)
                 if (key === 'content') {
                 }
-                    //console.log(`XXXXXXX ${key}: ${value}`)
                 return value
             }
 
@@ -63,23 +62,20 @@
                         value = $('<div/>').append($close)
                             .append($('<div/>').text(value))[0]
                     } else {
-                        console.log(`XXXXXXX ${key}: ${value}`)
-                        console.log(value[Symbol.toStringTag])
                         if (value[Symbol.toStringTag].startsWith('HTML')) {
-                        //    debugger
-                            // prepend with a button
-                            //value = $('<div/>')
-                            //    .append($close)
-                            //    .append($(value))
-                            // value = $close.insertBefore($(value).find('*:first'))
-                            //console.log(value)
-                            //$close.insertBefore($(value).find('*:first'))
-                            value = $close.add(value)
-                            debugger
-                            console.log(value)
+                        ////    debugger
+                            //// prepend with a button
+                            ////value = $('<div/>')
+                            ////    .append($close)
+                            ////    .append($(value))
+                            //// value = $close.insertBefore($(value).find('*:first'))
+                            ////console.log(value)
+                            ////$close.insertBefore($(value).find('*:first'))
+
+                            value = $('<div/>').append($close)
+                                .append($('<div/>').append(value))[0];
                         }
                     }
-                    value = value
                 }
                 return super.set(key,value)
             }
@@ -165,9 +161,9 @@
                                     return
                                 }
                                 if (href.indexOf('#') === 0) {
-                                    tooltip._setSource(this, 'content')
+                                    tooltip._setSource(this, 'content')  // TODO why not: this.set('source', 'content')?
                                 } else {
-                                    tooltip._setSource(this, 'ajax')
+                                    tooltip._setSource(this, 'ajax')     // TODO why not: this.set('source', 'ajax')?
                                 }
                             }
                             if (this.get('source') === 'content') {
@@ -350,7 +346,7 @@
 
                 let o = tooltip._mutateOptions(original_options)
 
-                const tippyopts = new TippyOptions($trigger, Object.entries(o))
+                const tippyopts = new TippyOptions($trigger, o)
 
                 /* o will now contain the configured pattern properties
                  * you've registered with the parser.addArgument method.
